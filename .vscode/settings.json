@@ -11,5 +11,8 @@
         "**/core.mongo*": true,
         "**/core.python*": true,
         "**/CVS": true
-     },
+    },
+    "cSpell.words": [
+        "ecommercesite"
+    ],
 }
