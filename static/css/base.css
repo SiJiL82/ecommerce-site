@@ -1,6 +1,10 @@
 :root {
-    --brand-colour: #000000;
-    --brand-background-colour: #ffffff;
+    --brand-colour: #512A97;
+    --brand-colour-focussed: #3E1F79;
+    --brand-colour-highlight: #D8BDE2;
+    --brand-header-background-colour: #B6BBD4;
+    --brand-banner-colour: #DBDBDB;
+    --brand-background-colour: #CDF1E4;
 }
 
 * {
@@ -9,3 +13,43 @@
     margin: 0;
     border: none;
 }
+
+body {
+    background-color: var(--brand-background-colour);
+}
+
+.no-cursor {
+    cursor: default;
+}
+
+.bg-brand {
+    background-color: var(--brand-header-background-colour);
+}
+
+.nav-link {
+    color: var(--brand-colour) !important;
+}
+
+.nav-link:hover {
+    text-decoration: underline !important;
+}
+
+.dropdown-item {
+    color: var(--brand-colour);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-image: none;
+    background-color: var(--brand-header-background-colour);
+    color: var(--brand-colour);
+}
+
+/* Add separator pipe to navbar when not collapsed */
+@media only screen and (min-width: 992px) {
+    .navbar .navbar-nav .nav-item .nav-link {
+      padding: 0 0.5em;
+    }
+    .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+      border-right: 2px solid var(--brand-colour-highlight);
+    }
+  }

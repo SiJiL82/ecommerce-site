@@ -37,7 +37,8 @@
   </head>
   <body>
     {% block body %}
-      <div>
+      {% include 'includes/nav.html' %}
+      {% comment %} <div>
         <strong>Menu:</strong>
         <ul>
           {% if user.is_authenticated %}
@@ -47,7 +48,7 @@
             <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
           {% endif %}
         </ul>
-      </div>
+      </div> {% endcomment %}
       {% block page_header %}
       {% endblock %}
       {% block content %}
