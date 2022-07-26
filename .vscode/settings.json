@@ -1,0 +1,15 @@
+{
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.github": false,
+        "**/.gitp*": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/.vscode": false,
+        "**/core.Microsoft*": true,
+        "**/core.mongo*": true,
+        "**/core.python*": true,
+        "**/CVS": true
+     },
+}
