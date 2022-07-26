@@ -45,7 +45,7 @@ body {
 }
 
 .header-container {
-    padding-top: 169px;
+    padding-top: 84px;
 }
 
 .brand-header {
@@ -64,14 +64,8 @@ body {
   }
 
 /* Fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+@media (min-width: 768px) {
+    .header-container {
+        padding-top: 169px;
     }
-
-    
 }
