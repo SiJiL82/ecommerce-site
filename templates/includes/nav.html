@@ -1,14 +1,15 @@
 <header class="container-fluid fixed-top bg-brand">
-  <div id="topnav" class="row">
-    <div class="col-12 my-auto text-center">
+  <div id="topnav" class="row justify-content-md-center">
+    <div class="col-md-auto my-auto text-center d-none d-md-block">
       <a href="{% url 'home' %}" class="nav-link main-logo-link">
         <img src="/media/logo-small.webp" alt="Mini Sew 'n' Sew">
       </a>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-brand main-nav w-100">
+    <nav class="navbar navbar-expand-md navbar-light bg-brand main-nav w-100 ">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="my-auto d-xs-inline d-md-none brand-header font-weight-bold display-4">Mini Sew N Sew</div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="container justify-content-center">
           <ul class="navbar-nav mr-auto flex-fill w-100 justify-content-center font-weight-bold">
