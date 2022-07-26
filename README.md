@@ -9,7 +9,7 @@ This project is an ecommerce site allowing the purchase of physical goods, confi
 ## User Stories
 
 ## Site Wireframes
-Link to separate doc
+[DesignWireframes](docs/design_wireframes.md)  
 
 # Features
 ## Navigation Bar
