@@ -48,9 +48,7 @@ body {
     color: var(--brand-colour);
 }
 
-.header-container {
-    padding-top: 84px;
-}
+
 
 .brand-header {
     font-family: Arial, Helvetica, sans-serif;
@@ -99,6 +97,10 @@ a[href^="mailto:"]:hover {
       border-right: 2px solid var(--brand-colour-highlight);
     }
   }
+
+.header-container {
+    padding-top: 83px;
+}
 
 /* Fixed top navbar only on medium and up */
 @media (min-width: 768px) {
