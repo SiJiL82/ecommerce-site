@@ -26,6 +26,10 @@ body {
     background-color: var(--brand-header-background-colour);
 }
 
+.text-brand {
+    color: var(--brand-colour);
+}
+
 .nav-link {
     color: var(--brand-colour) !important;
 }
@@ -51,6 +55,33 @@ body {
 .brand-header {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--brand-colour);
+}
+
+a[href^="mailto:"] {
+    text-decoration: none;
+    color: black;
+}
+
+a[href^="mailto:"]:hover {
+    text-decoration: underline;
+}
+
+.social-media-link {
+    color: black;
+}
+
+.social-media-link:hover {
+    color: var(--brand-colour)
+}
+
+.text-underline-hover {
+    text-decoration: none;
+    color: black;
+}
+
+.text-underline-hover:hover {
+    text-decoration: underline;
+    color: black;
 }
 
 /* Add separator pipe to navbar when not collapsed */

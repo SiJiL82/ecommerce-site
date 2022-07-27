@@ -7,6 +7,8 @@ This project is an ecommerce site allowing the purchase of physical goods, confi
 # Design
 ## Business Logic
 ## User Stories
+During the development process, user stories were tracked in the GitHub [project](https://github.com/users/SiJiL82/projects/1)  
+Key stories:  
 
 ## Site Wireframes
 [DesignWireframes](docs/design_wireframes.md)  
@@ -31,3 +33,4 @@ This project is an ecommerce site allowing the purchase of physical goods, confi
 ## Instructions
 
 # Credits
+https://github.com/morninj/django-email-obfuscator
