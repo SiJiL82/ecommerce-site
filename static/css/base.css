@@ -34,6 +34,10 @@ body {
     border: 1px solid var(--brand-colour-highlight);
 }
 
+.border-brand-highlight-medium {
+    border: 2px solid var(--brand-colour-highlight);
+}
+
 a.text-brand:hover {
     color: var(--brand-colour);
     text-decoration: none;
