@@ -84,6 +84,12 @@ a[href^="mailto:"]:hover {
     color: black;
 }
 
+.brand-banner {
+    background-color: var(--brand-banner-colour);
+    margin: 0;
+    padding: 10px 0;
+}
+
 /* Add separator pipe to navbar when not collapsed */
 @media only screen and (min-width: 992px) {
     .navbar .navbar-nav .nav-item .nav-link {
@@ -97,6 +103,6 @@ a[href^="mailto:"]:hover {
 /* Fixed top navbar only on medium and up */
 @media (min-width: 768px) {
     .header-container {
-        padding-top: 169px;
+        padding-top: 153px;
     }
 }
