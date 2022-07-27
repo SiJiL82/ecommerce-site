@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+	<div class="container header-container">
+		<div class="row">
+			<div class="col"></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid mt-md-4">
+    <div class="row justify-content-center">
+      <div class="col-md-auto my-auto">
+        <div class="card h-100">
+          <h2 class="ml-4 mt-4 text-brand">{{ product.friendly_name }} {{ product.category }}</h2>
+          <div class="card-body">
+            <img src="{{ product.image.url }}" alt="" class="img-fluid">
+            <p class="mt-2">{{ product.description }}</p>
+            <p>
+              {% if product.ready_to_ship %}
+                Ready to ship now!<br>
+                Delivery in 2-3 days.
+              {% else %}
+                Request handmade product!<br>
+                Production and delivery time approx. 3 weeks.
+              {% endif %}
+            </p>
+            {% if product.ready_to_ship %}
+            {% else %}
+            {% endif %}
+            <form action="" method="post" class="form">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="col-6">
+                  <strong>£{{ product.price }}</strong>
+                </div>
+                <div class="col-6">
+                  <span><strong>Select size:</strong></span>
+                  <select name="product_size" id="id_product_size" class="form-control d-inline">
+                    {% for size in product.sizes %}
+                      <option value="{{ size }}">{{ size }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <input type="hidden" name="order_type" value="{% if product.ready_to_ship %}ready{% else %}request{% endif %}">
+              <div class="mt-4">
+                <input type="submit" value="Add to Basket" class="btn w-100 border-brand-medium btn-brand">
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}

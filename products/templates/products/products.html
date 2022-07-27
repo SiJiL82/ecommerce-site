@@ -25,10 +25,10 @@
             <div class="card h-100">
               <img src="{{ product.image.url }}" alt="" class="img-fluid">
               <div class="card-body">
-                <a href="" class="text-brand"><strong>{{ product.friendly_name }} {{ product.category }}</strong></a>
+                <a href="{% url 'product_details' product.id %}" class="text-brand"><strong>{{ product.friendly_name }} {{ product.category }}</strong></a>
                 <p class="small">{% if product.ready_to_ship %}Buy now for: {% else %}Request for: {% endif %}{{ product.sizes }}</p>
                 <p><strong>£{{ product.price }}</strong></p>
-                <a href="#" class="btn w-100 border-brand-medium btn-brand">More details</a>
+                <a href="{% url 'product_details' product.id %}" class="btn w-100 border-brand-medium btn-brand">More details</a>
               </div>
             </div>
           </div>
