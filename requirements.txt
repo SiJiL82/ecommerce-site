@@ -8,12 +8,14 @@ dj3-cloudinary-storage==0.0.6
 Django==3.2
 django-allauth==0.41.0
 django-email-obfuscator==0.1.5
+django-multiselectfield==0.1.12
 environs==9.5.0
 gunicorn==20.1.0
 idna==3.3
 marshmallow==3.17.0
 oauthlib==3.2.0
 packaging==21.3
+Pillow==9.2.0
 psycopg2-binary==2.9.3
 pyparsing==3.0.9
 python-dotenv==0.20.0
