@@ -32,9 +32,12 @@ class Product(models.Model):
   """ Class to hold product information """
   sku = models.CharField(max_length=254)
   friendly_name = models.CharField(max_length=254)
-  description = models.TextField
+  description = models.TextField()
   category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
   price = models.DecimalField(max_digits=6, decimal_places=2)
   image = models.ImageField(null=True, blank=True)
   sizes = MultiSelectField(choices=SIZE_CHOICES)
   ready_to_ship = models.BooleanField(default=False)
+
+  def __str__(self):
+    return str(self.friendly_name)

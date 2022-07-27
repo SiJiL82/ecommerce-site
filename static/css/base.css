@@ -55,6 +55,12 @@ body {
     color: var(--brand-colour);
 }
 
+@media (max-width: 510px) {
+    .brand-header {
+        font-size: 2rem !important;
+    }
+}
+
 a[href^="mailto:"] {
     text-decoration: none;
     color: black;
@@ -106,5 +112,11 @@ a[href^="mailto:"]:hover {
 @media (min-width: 768px) {
     .header-container {
         padding-top: 153px;
+    }
+}
+/* Fixed top navbar only on medium and up */
+@media (max-width: 510px) {
+    .header-container {
+        padding-top: 56px;
     }
 }
