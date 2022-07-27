@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid px-0">
+    <div class="row brand-banner">
+      <div class="col text-center">
+        <div class="">
+          <h2>Shopping Basket</h2>
+        </div>
+      </div>
+    </div>
+    <section class="row justify-content-center">
+      <div class="col-md-auto my-auto">
+        {% if basket_items %}
+          <div class="table-responsive">
+            <table class="table table-sm table-borderless">
+              <thead class="text-brand">
+                <tr>
+                  <th scope="col">Product Info</th>
+                  <th scope="col"></th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Qty</th>
+                  <th scope="col">Subtotal</th>
+                  <th scope="col">Remove</th>
+                </tr>
+              </thead>
+              {% for item in basket_items %}
+                <tr>
+                  <td class="p-3 w-25">
+                    <img src="{{ item.product.image.url }}" alt="" class="img-fluid basket-img">
+                  </td>
+                  <td class="py-3 w-50">
+                    <p class="my-0"><strong>{{ item.product.friendly_name }} {{ item.product.category }}</strong></p>
+                    <p class="my-0"><strong>Size: </strong>{{ item.size }}</p>
+                    <p class="my-0"><strong>Order type: </strong>{% if item.ready_to_ship %}buy now{% else %}request{% endif %}</p>
+                  </td>
+                  <td class="py-3">
+                    <p class="my-0">£{{ item.product.price }}</p>
+                  </td>
+                  <td class="py-3">
+                    <p class="my-0">{{ item.quantity }}</p>
+                  </td>
+                  <td class="py-3">
+                    <p class="my-0">£{% widthratio item.product.price 1 item.quantity %}</p>
+                  </td>
+                  <td class="py-3">
+                    <a class="remove-item text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><i class="fas fa-trash"></i></small></a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
+          </div>
+        {% else %}
+        
+        {% endif %}
+      </div>
+    </section>
+  </div>
+{% endblock %}
+
+{% block postloadjs %}
+	{{ block.super }}
+  <script type="text/javascript">
+    $('.remove-item').click(function(e) {
+      var csrfToken = "{{ csrf_token }}";
+      var itemId = $(this).attr('id').split('remove_')[1];
+      var size = $(this).data('product_size');
+      var url = `/basket/remove/${itemId}/`;
+      var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+      $.post(url, data)
+        .done(function() {
+          location.reload();
+        });
+    });
+  </script>
+{% endblock %}

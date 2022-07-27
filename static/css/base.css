@@ -136,3 +136,11 @@ a[href^="mailto:"]:hover {
         padding-top: 56px;
     }
 }
+
+.basket-img {
+    max-width: 128px;
+}
+
+.remove-item {
+    cursor: pointer;
+}

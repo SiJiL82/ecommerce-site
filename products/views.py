@@ -28,9 +28,7 @@ def all_products(request):
 
     if 'category' in request.GET:
       category = request.GET['category']
-      print(category)
       products = products.filter(category__name__in=(category,))
-      print(products)
       selected_category = Category.objects.filter(name__in=(category, ))[0]
 
     if 'q' in request.GET:
