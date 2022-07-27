@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('basket/', include('basket.urls')),
+    path('faqs/', include('faqs.urls')),
 ]
 # Serving the media files in development mode
 if settings.DEBUG:
