@@ -57,6 +57,20 @@
                   </td>
                 </tr>
               {% endfor %}
+              <tr>
+                <td colspan="6" class="pt-5 text-right">
+                  <h6><strong>Basket Total: </strong>£{{ total|floatformat:2 }}</h6>
+                  <h6><strong>Delivery: </strong>£{{ delivery|floatformat:2 }}</h6>
+                  <h4 class="mt-4"><strong>Grand Total: </strong>£{{ grand_total|floatformat:2 }}</h4>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="6" class="text-right">
+                  <a href="" class="btn btn-brand border-brand-medium btn-lg">
+                    <span class="text-brand"><i class="fas fa-lock"></i> Secure Checkout</span>
+                  </a>
+                </td>
+              </tr>
             </table>
           </div>
         {% else %}
