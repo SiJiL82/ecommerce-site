@@ -30,6 +30,10 @@ body {
     color: var(--brand-colour);
 }
 
+.border-brand-highlight-thin {
+    border: 1px solid var(--brand-colour-highlight);
+}
+
 a.text-brand:hover {
     color: var(--brand-colour);
     text-decoration: none;
