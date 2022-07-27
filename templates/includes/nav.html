@@ -24,13 +24,13 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'products' %}" >All Products</a>
-                <a class="dropdown-item" href="#">Leggings</a>
-                <a class="dropdown-item" href="#">Dresses</a>
-                <a class="dropdown-item" href="#">Rompers</a>
-                <a class="dropdown-item" href="#">Jumpers</a>
-                <a class="dropdown-item" href="#">Dungarees</a>
-                <a class="dropdown-item" href="#">Shirts</a>
-                <a class="dropdown-item" href="#">Accessories</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=leggings">Leggings</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=dresses">Dresses</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=rompers">Rompers</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=jumpers">Jumpers</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=dungarees">Dungarees</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=shirts">Shirts</a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=accessories">Accessories</a>
               </div>
             </li>
             <li class="nav-item">
