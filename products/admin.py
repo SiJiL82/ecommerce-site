@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Category
 
-# Register your models here.
+class CategoryAdmin(admin.ModelAdmin):
+    """Categories admin screen config"""
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+admin.site.register(Category, CategoryAdmin)

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'email_obfuscator',
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
