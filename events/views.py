@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.views import View
 from .models import Event
 from datetime import datetime, timedelta
+from .forms import NewEventForm
 
 def view_events(request):
   """ A view that renders the events page """
@@ -11,7 +13,16 @@ def view_events(request):
   ordered_events = future_events.order_by('date')
 
   context = {
-    'events': ordered_events
+    'events': ordered_events,
+    'new_event_form': NewEventForm()
   }
 
-  return render(request, 'events/events.html', context)
+  if request.method == 'POST':
+    print("Posted form")
+    new_event_form = NewEventForm(data=request.POST)
+    if new_event_form.is_valid():
+      new_event_form.save()
+    return render(request, 'events/events.html', context)
+  else:
+    return render(request, 'events/events.html', context)
+

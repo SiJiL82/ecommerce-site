@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -19,8 +20,18 @@
       </div>
     </div>
     <div class="row justify-content-center mt-4">
-      {% if user.is_authenticated %}
-        Add event
+      {% if user.is_authenticated and user.is_superuser %}
+        
+        <div class="row">
+          <div class="col">
+            <h2 class="mt-2 text-brand">Add a new event:</h2>
+            <form method="post">
+              {{ new_event_form|crispy }}
+              {% csrf_token %}
+              <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
+            </form>
+          </div>
+        </div>
       {% endif %}
     </div>
     <div class="row justify-content-center mt-4">
