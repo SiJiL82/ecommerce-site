@@ -7,7 +7,7 @@ This project is an ecommerce site allowing the purchase of physical goods, confi
 # Design
 ## Business Logic
 ## User Stories
-During the development process, user stories were tracked in the GitHub [project](https://github.com/users/SiJiL82/projects/1)  
+An agile process was used during the development to track and iterate on features for the site, using GitHub [project](https://github.com/users/SiJiL82/projects/1)  
 Key stories:  
 
 ## Site Wireframes
