@@ -67,9 +67,31 @@
                 <div class="col-8">{{ event.description }}</div>
               </div>
             </div>
+            {% if user.is_authenticated and user.is_superuser %}
+              <div class="col-1">
+                <strong>Delete Event: </strong><a class="remove-event text-center" id="remove_{{ event.id }}"><i class="fas fa-trash"></i></a>
+              </div>
+            {% endif %}
           </div>
         {% endfor %}
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block postloadjs %}
+	{{ block.super }}
+  <script type="text/javascript">
+    $('.remove-event').click(function(e) {
+      var csrfToken = "{{ csrf_token }}";
+      var eventId = $(this).attr('id').split('remove_')[1];
+      var url = `/events/remove/${eventId}/`;
+      var data = {'csrfmiddlewaretoken': csrfToken};
+
+      $.post(url, data)
+        .done(function() {
+          location.reload();
+        });
+    });
+  </script>
 {% endblock %}

@@ -149,6 +149,7 @@ a[href^="mailto:"]:hover {
     max-width: 128px;
 }
 
-.remove-item {
+.remove-item,
+.remove-event {
     cursor: pointer;
 }

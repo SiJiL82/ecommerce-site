@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.views import View
 from .models import Event
 from datetime import datetime, timedelta
@@ -26,3 +26,12 @@ def view_events(request):
   else:
     return render(request, 'events/events.html', context)
 
+def remove_event(request, eventid):
+  """Remove the event """
+
+  try:
+    event = get_object_or_404(Event, pk=eventid)
+    event.delete()
+    return HttpResponse(status=200)
+  except Exception as e:
+    return HttpResponse(status=500)
