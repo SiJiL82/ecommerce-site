@@ -16,6 +16,12 @@ class NewEventForm(forms.ModelForm):
       'date': forms.DateInput(attrs={
         'type': 'date',
       }),
+      'location_address': forms.Textarea(attrs={
+        'rows': 4
+      }),
+      'description': forms.Textarea(attrs={
+        'rows': 2
+      })
     }
   
   def __init__(self, *args, **kwargs):

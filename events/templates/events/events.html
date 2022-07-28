@@ -26,8 +26,23 @@
           <div class="col">
             <h2 class="mt-2 text-brand">Add a new event:</h2>
             <form method="post">
-              {{ new_event_form|crispy }}
               {% csrf_token %}
+              <div class="row">
+                <div class="col-6">
+                  {{ new_event_form.location_name|as_crispy_field }}
+                  {{ new_event_form.location_address|as_crispy_field }}
+                </div>
+                <div class="col-6">
+                  {{ new_event_form.date|as_crispy_field }}
+                  {{ new_event_form.start_time|as_crispy_field }}
+                  {{ new_event_form.end_time|as_crispy_field }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  {{ new_event_form.description|as_crispy_field }}
+                </div>
+              </div>
               <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
             </form>
           </div>
