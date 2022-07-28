@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'faqs',
     'events',
     'request',
+    'reviews'
 ]
 
 MIDDLEWARE = [
