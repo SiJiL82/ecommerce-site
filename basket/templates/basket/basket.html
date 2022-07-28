@@ -74,7 +74,8 @@
             </table>
           </div>
         {% else %}
-        
+          <h3 class="text-brand mt-4">There are no items in your shopping basket!</h3>
+          <p class="mt-4"><a class="btn w-100 border-brand-medium btn-brand" href="{% url 'products' %}" >Go to shop</a></p>
         {% endif %}
       </div>
     </section>
