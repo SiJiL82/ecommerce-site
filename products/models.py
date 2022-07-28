@@ -1,5 +1,7 @@
 from django.db import models
 from multiselectfield import MultiSelectField
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import User
 
 class Category(models.Model):
   """ Class to hold categories for products """
@@ -41,3 +43,29 @@ class Product(models.Model):
 
   def __str__(self):
     return str(self.friendly_name)
+
+class Review(models.Model):
+  """ Class to hold product reviews """
+
+  RATING_CHOICES = (
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5),
+  )
+
+  user_id = models.ForeignKey(
+    User, on_delete=models.CASCADE, related_name="review"
+  )
+  name = models.CharField(max_length=254)
+  product = models.ForeignKey (
+    Product, on_delete=models.CASCADE, related_name='review'
+  )
+  # rating = models.IntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
+  rating = models.IntegerField(choices = RATING_CHOICES)
+  date = models.DateTimeField(auto_now_add=True)
+  review = models.TextField()
+
+  def __str__(self):
+    return f'Review by {self.name}'

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% load product_filters %}
 
 {% block page_header %}
 	<div class="container header-container">
@@ -54,6 +56,39 @@
             </form>
           </div>
         </div> 
+        {% if reviews %}
+          <div class="mt-4">
+            <h2 class="text-brand pl-2">Reviews:</h2>
+          </div>
+          <div class="mt-4">
+            {% for review in reviews %}
+              <div class="card mt-1 px-4 py-2">
+                <div class="row">
+                  <div class="col-4"><strong>Product bought by: </strong></div>
+                  <div class="col-8">{{ review.name }}</div>
+                  <div class="col-4"><strong>Rating: </strong></div>
+                  <div class="col-8 d-inline">
+                    {% for i in review.rating|times %}
+                      <span class="text-brand d-inline"><i class="fas fa-star"></i></span>
+                    {% endfor %}
+                  </div>
+                  <div class="col-4"><strong>Review: </strong></div>
+                  <div class="col-8">{{ review.review }}</div>
+                </div>  
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <div class="card mt-4">
+            <h3 class="text-brand mx-4 mt-4">Add your review!</h3>
+            <form method="post" class="form px-4 pb-4">
+              {% csrf_token %}
+              {{ new_review_form|crispy }}
+              <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
+            </form>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>

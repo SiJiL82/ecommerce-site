@@ -1,7 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.db.models.functions import Lower
 from django.db.models import Q
-from .models import Product, Category
+
+from products.forms import NewReviewForm
+from .models import Product, Category, Review
 
 def all_products(request):
   """ A view to show all products, including sorting and filtering """
@@ -53,8 +55,25 @@ def product_detail(request, product_id):
   """ A view to show product details for a single product """
   product = get_object_or_404(Product, pk=product_id)
 
+  product_reviews = Review.objects.filter(product = product_id)
+
+  if request.method == 'POST':
+    print(request.POST)
+    new_review_form = NewReviewForm(data=request.POST)
+    if new_review_form.is_valid():
+      print('Saving Form')
+      review_form = new_review_form.save(commit=False)
+      review_form.user_id = request.user
+      review_form.product = product
+      review_form.save()
+    else:
+      for field in new_review_form:
+        print("Field Error:", field.name,  field.errors)
+
   context = {
     'product': product,
+    'reviews': product_reviews,
+    'new_review_form': NewReviewForm()
   }
 
   return render(request, 'products/product_details.html', context)
