@@ -48,8 +48,11 @@
             <div class="col-12 d-none d-xl-block mb-4">
             </div>
           {% endif %}
-          {% empty %}
-          <h3>Sorry, there are currently no {{ current_category }} available</h3>
+        {% empty %}
+          <div class="col text-center">
+            <h3 class="text-brand ">Sorry, there are currently no {{ current_category }} available</h3>
+            <p>Please choose another product type from the menu!</p>
+          </div>
         {% endfor %}
       </div>
     </section>
