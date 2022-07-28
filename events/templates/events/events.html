@@ -69,7 +69,7 @@
             </div>
             {% if user.is_authenticated and user.is_superuser %}
               <div class="col-1">
-                <strong>Delete Event: </strong><a class="remove-event text-center" id="remove_{{ event.id }}"><i class="fas fa-trash"></i></a>
+                <strong>Delete Event: </strong><a class="remove-event remove-pointer text-center" id="remove_{{ event.id }}"><i class="fas fa-trash"></i></a>
               </div>
             {% endif %}
           </div>

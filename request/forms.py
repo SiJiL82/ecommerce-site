@@ -5,6 +5,7 @@ class NewRequestForm(forms.ModelForm):
   class Meta:
     model = Request
     fields = (
+      'name',
       'category',
       'size',
       'description',
@@ -17,18 +18,7 @@ class NewRequestForm(forms.ModelForm):
   
   def __init__(self, *args, **kwargs):
     super(NewRequestForm, self).__init__(*args, **kwargs)
+    self.fields['name'].label = 'Full Name:'
     self.fields['category'].label = 'Category:'
     self.fields['size'].label = 'Size:'
     self.fields['description'].label = 'Description:'
-
-
-
-  #   name = CharField(max_length=254)
-  # email_address = models.EmailField()
-  # category = models.ForeignKey('products.Category', null=True, blank=True, on_delete=models.SET_NULL)
-  # size = models.CharField(
-  #   max_length=254,
-  #   choices = SIZE_CHOICES
-  # )
-  # description = models.TextField()
-  # date_created 

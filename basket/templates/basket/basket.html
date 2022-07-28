@@ -53,7 +53,7 @@
                     <p class="my-0">£{% widthratio item.product.price 1 item.quantity %}</p>
                   </td>
                   <td class="py-3">
-                    <a class="remove-item text-center" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><i class="fas fa-trash"></i></small></a>
+                    <a class="remove-item text-center remove-pointer" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small><i class="fas fa-trash"></i></small></a>
                   </td>
                 </tr>
               {% endfor %}

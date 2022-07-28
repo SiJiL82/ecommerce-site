@@ -32,5 +32,9 @@ Key stories:
 ## Prerequisites
 ## Instructions
 
+# Issues
+## Known Bugs
+On pages that implement Cripsy Forms (such as the Request page), the top header extends off the right of the page, creating a horizontal scroll bar.  
+The cause of this has not been found.  
 # Credits
 https://github.com/morninj/django-email-obfuscator
