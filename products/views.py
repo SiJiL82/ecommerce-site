@@ -58,17 +58,12 @@ def product_detail(request, product_id):
   product_reviews = Review.objects.filter(product = product_id)
 
   if request.method == 'POST':
-    print(request.POST)
     new_review_form = NewReviewForm(data=request.POST)
     if new_review_form.is_valid():
-      print('Saving Form')
       review_form = new_review_form.save(commit=False)
       review_form.user_id = request.user
       review_form.product = product
       review_form.save()
-    else:
-      for field in new_review_form:
-        print("Field Error:", field.name,  field.errors)
 
   context = {
     'product': product,

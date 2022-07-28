@@ -14,8 +14,6 @@ def request(request):
   }
 
   if request.method == 'POST':
-    for field in request.user._meta.fields:
-      print(field.name)
     new_request_form = NewRequestForm(data=request.POST)
     if new_request_form.is_valid():
       new_request = new_request_form.save(commit=False)
