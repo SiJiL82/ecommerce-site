@@ -18,7 +18,6 @@ def view_events(request):
   }
 
   if request.method == 'POST':
-    print("Posted form")
     new_event_form = NewEventForm(data=request.POST)
     if new_event_form.is_valid():
       new_event_form.save()

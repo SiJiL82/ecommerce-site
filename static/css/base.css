@@ -100,6 +100,16 @@ a[href^="mailto:"]:hover {
     color: black;
 }
 
+.text-brand-underline-hover {
+    text-decoration: none;
+    color: var(--brand-colour);
+}
+
+.text-brand-underline-hover:hover {
+    text-decoration: underline;
+    color: var(--brand-colour-highlight);
+}
+
 .brand-banner {
     background-color: var(--brand-banner-colour);
     margin: 0;
