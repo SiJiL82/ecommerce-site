@@ -1,5 +1,5 @@
-# Ecommerce Site - Mini Sew 'n' Sew
-This project is an ecommerce site allowing the purchase of physical goods, configured to be a store front for my sister's business - Mini Sew 'n' Sew.  
+# Ecommerce Site - Mini Sew N Sew
+This project is an ecommerce site allowing the purchase of physical goods, configured to be a store front for my sister's business - Mini Sew N Sew.  
 
 # Table of Contents
 - [Design](#design)
@@ -36,5 +36,7 @@ Key stories:
 ## Known Bugs
 On pages that implement Cripsy Forms (such as the Request page), the top header extends off the right of the page, creating a horizontal scroll bar.  
 The cause of this has not been found.  
+# Future Developments
+Customise the AllAuth account management forms (sign up, sign in etc.) so they fit the site style. 
 # Credits
 https://github.com/morninj/django-email-obfuscator
