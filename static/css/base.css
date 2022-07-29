@@ -120,7 +120,7 @@ a[href^="mailto:"]:hover {
 
 .text-brand-underline-hover:hover {
     text-decoration: underline;
-    color: rgb(var(--brand-colour-highlight));
+    color: rgb(var(--brand-colour));
 }
 
 .brand-banner {
