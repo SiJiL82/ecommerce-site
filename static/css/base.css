@@ -21,7 +21,8 @@ body {
 input:focus,
 textarea:focus,
 select:focus,
-.form-control:focus {
+.form-control:focus,
+.StripeElement--focus {
     outline: none;
     border: none;
     box-shadow: 0 0 0 0.2rem rgba(var(--brand-colour), 0.4);
@@ -177,16 +178,10 @@ a[href^="mailto:"]:hover {
 }
 
 .StripeElement {
-    font-size: 1rem;
-    background-color: white;
-    color: #495057;
-    font-weight: 400;
-    line-height: 1.5;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 6px 12px;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    -webkit-border-radius: .25rem;
-    -moz-border-radius: .25rem;
-    -ms-border-radius: .25rem;
-    -o-border-radius: .25rem;
-    padding: 6px, 12px;
+    background-color: white;
 }
