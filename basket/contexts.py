@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from django.conf import settings
 
 
 def basket_contents(request):
@@ -32,7 +33,7 @@ def basket_contents(request):
                     'size': size,
                 })
 
-    delivery = Decimal(3.20)
+    delivery = Decimal(settings.DELIVERY_AMOUNT)
 
     grand_total = delivery + total
 

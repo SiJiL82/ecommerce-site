@@ -1,7 +1,9 @@
+from decimal import Decimal
 from django.db import models
 from products.models import Product
 import uuid
 from django.db.models import Sum
+from django.conf import settings
 
 
 class Order(models.Model):
@@ -32,8 +34,8 @@ class Order(models.Model):
         """ Update grand total each time a line item is added """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))[
             'lineitem_total_sum']
-        # TODO: Move to a settings variable so it can be changed in one place
-        self.delivery_cost = 3.20
+
+        self.delivery_cost = Decimal(settings.DELIVERY_AMOUNT)
 
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
