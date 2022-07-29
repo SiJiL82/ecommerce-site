@@ -27,6 +27,7 @@ urlpatterns = [
     path('faqs/', include('faqs.urls')),
     path('events/', include('events.urls')),
     path('request/', include('request.urls')),
+    path('checkout/', include('checkout.urls')),
 ]
 # Serving the media files in development mode
 if settings.DEBUG:
