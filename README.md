@@ -22,6 +22,8 @@ Key stories:
 ## Events
 ## Product Pages
 ## Shopping Basket
+## Misc
+Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactable by humans.  
 ## Checkout
 
 # Testing

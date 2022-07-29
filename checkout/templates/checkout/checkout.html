@@ -3,9 +3,9 @@
 
 {% block page_header %}
     <div class="container header-container">
-            <div class="row">
-                <div class="col"></div>
-            </div>
+        <div class="row">
+            <div class="col"></div>
+        </div>
     </div>
 {% endblock %}
 
@@ -14,16 +14,16 @@
         <div class="row brand-banner">
             <div class="col text-center">
                 <div class="">
-                    <h2>Update your custom product request</h2>
+                    <h2>Checkout</h2>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-4 mx-sm-1">
-            <div class="col-md-12 col-lg-8 col-xl-6">
-                <p>Please update your request with any changes you'd like to make!</p>
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 px-5">
+                <h3 class="text-brand">Please enter your delivery details:</h3>
                 <form method="post">
                     {% csrf_token %}
-                    {{ request_form | crispy }}
+                    {{ order_form | crispy }}
                     <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
                 </form>
             </div>

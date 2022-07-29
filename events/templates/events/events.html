@@ -3,92 +3,92 @@
 
 {% block page_header %}
     <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+            <div class="row">
+                <div class="col"></div>
+            </div>
     </div>
 {% endblock %}
 
 {% block content %}
-  <div class="container-fluid px-0">
-    <div class="row brand-banner">
-      <div class="col text-center">
-        <div class="">
-          <h2>Upcoming Markets</h2>
+    <div class="container-fluid px-0">
+        <div class="row brand-banner">
+            <div class="col text-center">
+                <div class="">
+                    <h2>Upcoming Markets</h2>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    {% if user.is_authenticated and user.is_superuser %}
-      <div class="row justify-content-center mt-4 mx-sm-1">
-        <div class="col-md-12 col-lg-8 col-xl-6">
-          <h2 class="mt-2 text-brand">Add a new event:</h2>
-          <form method="post">
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-6">
-                {{ new_event_form.location_name|as_crispy_field }}
-                {{ new_event_form.location_address|as_crispy_field }}
-              </div>
-              <div class="col-6">
-                {{ new_event_form.date|as_crispy_field }}
-                {{ new_event_form.start_time|as_crispy_field }}
-                {{ new_event_form.end_time|as_crispy_field }}
-              </div>
+        {% if user.is_authenticated and user.is_superuser %}
+            <div class="row justify-content-center mt-4 mx-sm-1">
+                <div class="col-md-12 col-lg-8 col-xl-6">
+                    <h2 class="mt-2 text-brand">Add a new event:</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-6">
+                                {{ new_event_form.location_name|as_crispy_field }}
+                                {{ new_event_form.location_address|as_crispy_field }}
+                            </div>
+                            <div class="col-6">
+                                {{ new_event_form.date|as_crispy_field }}
+                                {{ new_event_form.start_time|as_crispy_field }}
+                                {{ new_event_form.end_time|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                {{ new_event_form.description|as_crispy_field }}
+                            </div>
+                        </div>
+                        <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
+                    </form>
+                    <hr>
+                </div>
             </div>
-            <div class="row">
-              <div class="col">
-                {{ new_event_form.description|as_crispy_field }}
-              </div>
+        {% endif %}
+        <div class="row justify-content-center mt-4 mx-sm-1">
+            <div class="col-md-12 col-lg-8 col-xl-6">
+                {% for event in events %}
+                    <div class="row border-brand-highlight-medium rounded mx-auto mb-4">
+                        <div class="col-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="col-8">
+                            <h4><strong class="text-brand">{{ event.location_name }}</strong></h4>
+                            <div class="row">
+                                <div class="col-4"><strong>When: </strong></div>
+                                <div class="col-8">{{ event.date }} - {{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</div>
+                                <div class="col-4"><strong>Where: </strong></div>
+                                <div class="col-8">{{ event.location_address|linebreaks }}</div>
+                                <div class="col-4"><strong>Description: </strong></div>
+                                <div class="col-8">{{ event.description }}</div>
+                            </div>
+                        </div>
+                        {% if user.is_authenticated and user.is_superuser %}
+                            <div class="col-1">
+                                <strong>Delete Event: </strong><a class="remove-event remove-pointer text-center" id="remove_{{ event.id }}"><i class="fas fa-trash"></i></a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
             </div>
-            <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
-          </form>
-          <hr>
         </div>
-      </div>
-    {% endif %}
-    <div class="row justify-content-center mt-4 mx-sm-1">
-      <div class="col-md-12 col-lg-8 col-xl-6">
-        {% for event in events %}
-          <div class="row border-brand-highlight-medium rounded mx-auto mb-4">
-            <div class="col-1">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div class="col-8">
-              <h4><strong class="text-brand">{{ event.location_name }}</strong></h4>
-              <div class="row">
-                <div class="col-4"><strong>When: </strong></div>
-                <div class="col-8">{{ event.date }} - {{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</div>
-                <div class="col-4"><strong>Where: </strong></div>
-                <div class="col-8">{{ event.location_address|linebreaks }}</div>
-                <div class="col-4"><strong>Description: </strong></div>
-                <div class="col-8">{{ event.description }}</div>
-              </div>
-            </div>
-            {% if user.is_authenticated and user.is_superuser %}
-              <div class="col-1">
-                <strong>Delete Event: </strong><a class="remove-event remove-pointer text-center" id="remove_{{ event.id }}"><i class="fas fa-trash"></i></a>
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-      </div>
     </div>
-  </div>
 {% endblock %}
 
 {% block postloadjs %}
 	{{ block.super }}
-  <script type="text/javascript">
-    $('.remove-event').click(function(e) {
-      var csrfToken = "{{ csrf_token }}";
-      var eventId = $(this).attr('id').split('remove_')[1];
-      var url = `/events/remove/${eventId}/`;
-      var data = {'csrfmiddlewaretoken': csrfToken};
+    <script type="text/javascript">
+        $('.remove-event').click(function(e) {
+            var csrfToken = "{{ csrf_token }}";
+            var eventId = $(this).attr('id').split('remove_')[1];
+            var url = `/events/remove/${eventId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken};
 
-      $.post(url, data)
-        .done(function() {
-          location.reload();
+            $.post(url, data)
+                .done(function() {
+                    location.reload();
+                });
         });
-    });
-  </script>
+    </script>
 {% endblock %}

@@ -3,71 +3,71 @@
 {% load cloudinary %}
 
 {% block page_header %}
-  <div class="container header-container">
-    <div class="row">
-      <div class="col">
-          
-      </div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                    
+            </div>
+        </div>
     </div>
-  </div>
 {% endblock %}
 
 {% block content %}
-  <main>
-    <div class="container">
-      <section class="mt-4">
-        {% comment %} About The Company {% endcomment %}
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <h2 class="text-center">About Mini Sew N Sew</h2>
-            <p class="text-center">Hello! Welcome to my website, I am so delighted that you are visiting Mini Sew N Sew! My name is Jeri and I am mum to two gorgeous girls, who are the main inspiration for my venture. I love making their clothes and after a few years of doing so, I finally decided it was time to take the leap into making these creations available to the world. Come take a walk with me into my happy place, this site is full of my creations, all made to order from my home in Wirral and made with love and joy. I pride myself in attention to detail, and creating things designed to last the test of time. Please get in touch with any questions, custom requests and just for a chat too, cannot wait to hear from you.</p>
-          </div>
-          <div class="col-md-6 d-md-block d-none">
-            {% cloudinary "branding/logo-large_vij2gh.webp" class='img-fluid' alt='Mini Sew N Sew Logo' %}
-          </div>
+    <main>
+        <div class="container">
+            <section class="mt-4">
+                {% comment %} About The Company {% endcomment %}
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h2 class="text-center">About Mini Sew N Sew</h2>
+                        <p class="text-center">Hello! Welcome to my website, I am so delighted that you are visiting Mini Sew N Sew! My name is Jeri and I am mum to two gorgeous girls, who are the main inspiration for my venture. I love making their clothes and after a few years of doing so, I finally decided it was time to take the leap into making these creations available to the world. Come take a walk with me into my happy place, this site is full of my creations, all made to order from my home in Wirral and made with love and joy. I pride myself in attention to detail, and creating things designed to last the test of time. Please get in touch with any questions, custom requests and just for a chat too, cannot wait to hear from you.</p>
+                    </div>
+                    <div class="col-md-6 d-md-block d-none">
+                        {% cloudinary "branding/logo-large_vij2gh.webp" class='img-fluid' alt='Mini Sew N Sew Logo' %}
+                    </div>
+                </div>
+            </section>
+            <hr class="w-100">
+            <section class="mt-4">
+                {% comment %} Meet the Team {% endcomment %}
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-center">Our Team</h2>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6 col-sm-12">
+                        {% cloudinary "team/team-jeri_mejqav.webp" alt="Photograph of Jerilyn at her sewing machine" class="img-fluid" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h3 class="text-center text-brand"><strong>Jerilyn Brown</strong></h3>
+                        <h4>Founder and Maker</h4>
+                        <p>Hello! This is me, probably the only photo you will get from me, as I leave the modelling to the little ones! I am the creator and I spend most of my time at my trusty work horses (the machine and overlocker), I play many roles, but my favourite is custom selecting the most exciting fabrics I can get my hands on and creating unique sewing patterns for one of a kind clothing. I'm a one-woman band - I package and post, photograph and market, I'm head of accounting and those customer relations questions all come to me too!</p>
+                    </div>
+                </div>
+                <hr class="border-brand-highlight-thin">
+                <div class="row mt-4">
+                    <div class="col-md-6 col-sm-12">
+                        <h3 class="text-center text-brand"><strong>Kitty</strong></h3>
+                        <h4>Postal Assistant and Head Model</h4>
+                        <p>Since joining Mini Sew N Sew, my first daughter Kitty has played a crucial role in the continued success of the company! She is where it all started, the first recipient of Mini Sew N Sew clothes, the sassiest model, and the biggest fan - I am a bit biased obviously!</p>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        {% cloudinary "team/team-kitty_jpe45i.webp" alt="Photograph of Kitty modelling a dress" class="img-fluid" %}
+                    </div>
+                </div>
+                <hr class="border-brand-highlight-thin">
+                <div class="row mt-4">
+                    <div class="col-md-6 col-sm-12">
+                        {% cloudinary "team/team-millie_hqnapv.webp" alt="Photograph of Millie modelling a dress" class="img-fluid" %}
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h3 class="text-center text-brand"><strong>Millie</strong></h3>
+                        <h4>Model and Head of Morale</h4>
+                        <p>Also known as 'the Meme', this gorgeous team member is an absolute dream to make clothes for and wears almost anything I pop her in. Millie inspires me to step out of my comfort zone as she lives in handmade clothes meaning I must make them durable for her as well as comfortable too. The giggliest member of the team, and the one who makes the days when post office runs are not as smooth as I'd like a lot more joyful to manage.</p>
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
-      <hr class="w-100">
-      <section class="mt-4">
-        {% comment %} Meet the Team {% endcomment %}
-        <div class="row">
-          <div class="col">
-            <h2 class="text-center">Our Team</h2>
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col-md-6 col-sm-12">
-            {% cloudinary "team/team-jeri_mejqav.webp" alt="Photograph of Jerilyn at her sewing machine" class="img-fluid" %}
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <h3 class="text-center text-brand"><strong>Jerilyn Brown</strong></h3>
-            <h4>Founder and Maker</h4>
-            <p>Hello! This is me, probably the only photo you will get from me, as I leave the modelling to the little ones! I am the creator and I spend most of my time at my trusty work horses (the machine and overlocker), I play many roles, but my favourite is custom selecting the most exciting fabrics I can get my hands on and creating unique sewing patterns for one of a kind clothing. I'm a one-woman band - I package and post, photograph and market, I'm head of accounting and those customer relations questions all come to me too!</p>
-          </div>
-        </div>
-        <hr class="border-brand-highlight-thin">
-        <div class="row mt-4">
-          <div class="col-md-6 col-sm-12">
-            <h3 class="text-center text-brand"><strong>Kitty</strong></h3>
-            <h4>Postal Assistant and Head Model</h4>
-            <p>Since joining Mini Sew N Sew, my first daughter Kitty has played a crucial role in the continued success of the company! She is where it all started, the first recipient of Mini Sew N Sew clothes, the sassiest model, and the biggest fan - I am a bit biased obviously!</p>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            {% cloudinary "team/team-kitty_jpe45i.webp" alt="Photograph of Kitty modelling a dress" class="img-fluid" %}
-          </div>
-        </div>
-        <hr class="border-brand-highlight-thin">
-        <div class="row mt-4">
-          <div class="col-md-6 col-sm-12">
-            {% cloudinary "team/team-millie_hqnapv.webp" alt="Photograph of Millie modelling a dress" class="img-fluid" %}
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <h3 class="text-center text-brand"><strong>Millie</strong></h3>
-            <h4>Model and Head of Morale</h4>
-            <p>Also known as 'the Meme', this gorgeous team member is an absolute dream to make clothes for and wears almost anything I pop her in. Millie inspires me to step out of my comfort zone as she lives in handmade clothes meaning I must make them durable for her as well as comfortable too. The giggliest member of the team, and the one who makes the days when post office runs are not as smooth as I'd like a lot more joyful to manage.</p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
+    </main>
 {% endblock %}
