@@ -1,10 +1,10 @@
 :root {
-    --brand-colour: #512A97;
-    --brand-colour-focussed: #3E1F79;
-    --brand-colour-highlight: #D8BDE2;
-    --brand-header-background-colour: #B6BBD4;
-    --brand-banner-colour: #DBDBDB;
-    --brand-background-colour: #CDF1E4;
+    --brand-colour: 81, 42, 151;
+    --brand-colour-focussed: 62, 31, 121;
+    --brand-colour-highlight: 216, 189, 226;
+    --brand-header-background-colour: 182, 187, 212;
+    --brand-banner-colour: 219, 219, 219;
+    --brand-background-colour: 205, 241, 228;
 }
 
 * {
@@ -15,7 +15,20 @@
 }
 
 body {
-    background-color: var(--brand-background-colour);
+    background-color: rgb(var(--brand-background-colour));
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 0.2rem rgba(var(--brand-colour), 0.4);
+}
+
+input:checked {
+    background-color: rgb(var(--brand-colour));
 }
 
 .no-cursor {
@@ -23,29 +36,29 @@ body {
 }
 
 .bg-brand {
-    background-color: var(--brand-header-background-colour);
+    background-color: rgb(var(--brand-header-background-colour));
 }
 
 .text-brand {
-    color: var(--brand-colour);
+    color: rgb(var(--brand-colour));
 }
 
 .border-brand-highlight-thin {
-    border: 1px solid var(--brand-colour-highlight);
+    border: 1px solid rgb(var(--brand-colour-highlight));
 }
 
 .border-brand-highlight-medium {
-    border: 2px solid var(--brand-colour-highlight);
+    border: 2px solid rgb(var(--brand-colour-highlight));
 }
 
 a.text-brand:hover {
-    color: var(--brand-colour);
+    color: rgb(var(--brand-colour));
     text-decoration: none;
-    border-bottom: 1px solid var(--brand-colour-highlight);
+    border-bottom: 1px solid rgb(var(--brand-colour-highlight));
 }
 
 .nav-link {
-    color: var(--brand-colour) !important;
+    color: rgb(var(--brand-colour)) !important;
 }
 
 .nav-link:hover {
@@ -53,18 +66,18 @@ a.text-brand:hover {
 }
 
 .dropdown-item {
-    color: var(--brand-colour);
+    color: rgb(var(--brand-colour));
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
     background-image: none;
-    background-color: var(--brand-header-background-colour);
-    color: var(--brand-colour);
+    background-color: rgb(var(--brand-header-background-colour));
+    color: rgb(var(--brand-colour));
 }
 
 .brand-header {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--brand-colour);
+    color: rgb(var(--brand-colour));
 }
 
 @media (max-width: 510px) {
@@ -87,7 +100,7 @@ a[href^="mailto:"]:hover {
 }
 
 .social-media-link:hover {
-    color: var(--brand-colour)
+    color: rgb(var(--brand-colour))
 }
 
 .text-underline-hover {
@@ -102,12 +115,12 @@ a[href^="mailto:"]:hover {
 
 .text-brand-underline-hover {
     text-decoration: none;
-    color: var(--brand-colour);
+    color: rgb(var(--brand-colour));
 }
 
 .text-brand-underline-hover:hover {
     text-decoration: underline;
-    color: var(--brand-colour-highlight);
+    color: rgb(var(--brand-colour-highlight));
 }
 
 .brand-banner {
@@ -117,15 +130,15 @@ a[href^="mailto:"]:hover {
 }
 
 .border-brand-thin {
-    border: 1px solid var(--brand-colour);
+    border: 1px solid rgb(var(--brand-colour));
 }
 
 .border-brand-medium {
-    border: 2px solid var(--brand-colour);
+    border: 2px solid rgb(var(--brand-colour));
 }
 
 .btn-brand:hover {
-    border: 2px solid var(--brand-colour-highlight);
+    border: 2px solid rgb(var(--brand-colour-highlight));
 }
 
 /* Add separator pipe to navbar when not collapsed */
@@ -134,7 +147,7 @@ a[href^="mailto:"]:hover {
       padding: 0 0.5em;
     }
     .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
-      border-right: 2px solid var(--brand-colour-highlight);
+      border-right: 2px solid rgb(var(--brand-colour-highlight));
     }
   }
 
