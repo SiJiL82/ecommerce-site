@@ -11,8 +11,7 @@ var style = {
         fontSize: '16px',
         '::placeholder': {
             color: '#aab7c4'
-        },
-        padding: 6
+        }
     },
     invalid: {
         color: '#dc3545',
