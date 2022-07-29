@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Request
 
+
 class RequestAdmin(admin.ModelAdmin):
     """ Requests admin screen config """
     list_display = (
@@ -8,4 +9,6 @@ class RequestAdmin(admin.ModelAdmin):
         'date_created',
         'fulfilled',
     )
+
+
 admin.site.register(Request, RequestAdmin)
