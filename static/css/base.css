@@ -124,7 +124,7 @@ a[href^="mailto:"]:hover {
 }
 
 .brand-banner {
-    background-color: var(--brand-banner-colour);
+    background-color: rgb(var(--brand-banner-colour));
     margin: 0;
     padding: 10px 0;
 }
