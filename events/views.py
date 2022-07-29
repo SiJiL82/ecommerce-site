@@ -33,5 +33,5 @@ def remove_event(request, eventid):
         event = get_object_or_404(Event, pk=eventid)
         event.delete()
         return HttpResponse(status=200)
-    except Exception as e:
+    except Exception:
         return HttpResponse(status=500)

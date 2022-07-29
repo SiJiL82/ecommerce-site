@@ -33,7 +33,7 @@ def remove_request(request, requestid):
         selected_request = get_object_or_404(Request, pk=requestid)
         selected_request.delete()
         return HttpResponse(status=200)
-    except Exception as e:
+    except Exception:
         return HttpResponse(status=500)
 
 

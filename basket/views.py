@@ -1,6 +1,4 @@
-from django.shortcuts import (get_object_or_404, render, redirect, reverse,
-                              HttpResponse)
-from products.models import Product
+from django.shortcuts import render, redirect, reverse, HttpResponse
 
 
 def view_basket(request):
@@ -37,7 +35,7 @@ def add_to_basket(request, item_id):
 
 
 def adjust_basket(request, item_id):
-    """Adjust the quantity of the specified product to the specified amount"""
+    """ Adjust quantity of the specified product to the specified amount """
 
     quantity = int(request.POST.get('quantity'))
     size = None
@@ -80,5 +78,5 @@ def remove_from_basket(request, item_id):
 
         request.session['basket'] = basket
         return HttpResponse(status=200)
-    except Exception as e:
+    except Exception:
         return HttpResponse(status=500)
