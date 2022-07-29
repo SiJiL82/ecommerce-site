@@ -14,19 +14,59 @@
         <div class="row brand-banner">
             <div class="col text-center">
                 <div class="">
-                    <h2>Checkout</h2>
+                    <h2>Delivery Details</h2>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-4">
-            <div class="col-sm-12 col-md-6 col-lg-4 px-5">
-                <h3 class="text-brand">Please enter your delivery details:</h3>
-                <form method="post">
+        <div class="row justify-content-center mt-4 mx-sm-1">
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-6">
+                <h3 class="text-brand">Please enter your contact details and address:</h3>
+                <form method="post" action="{% url 'checkout' %}" id="payment-form">
                     {% csrf_token %}
-                    {{ order_form | crispy }}
+                    {% comment %} {{ order_form | crispy }} {% endcomment %}
+                    <div class="row">
+                        <div class="col-3"><strong>{{ order_form.full_name.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ order_form.full_name | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.email.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ order_form.email | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.phone_number.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ order_form.phone_number | as_crispy_field }}</div>
+                    </div>
+                    <hr class="mt-0 mb-3 border-brand-highlight-thin">
+                    <div class="row">
+                        <div class="col-3"><strong>{{ order_form.street_address1.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ order_form.street_address1 | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.street_address2.label }}</strong></div>
+                        <div class="col-9">{{ order_form.street_address2 | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.town_or_city.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ order_form.town_or_city | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.postcode.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ order_form.postcode | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.county.label }}</strong></div>
+                        <div class="col-9">{{ order_form.county | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.country.label }}</strong></div>
+                        <div class="col-9">{{ order_form.country | as_crispy_field }}</div>
+                    </div>
+                    <div class="form-check form-check-inline mb-2">
+                        {% if user.is_authenticated %}
+                            <label for="id-save-info" class="form-check-label">Save this information to my profile</label>
+                            <input type="checkbox" name="save-info" id="id-save-info" class="form-check-input ml-2 mr-0">
+                        {% else %}
+                        
+                        {% endif %}
+                    </div>
                     <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 {% endblock %}
+
+
+{% comment %} 
+        self.fields['country'].label = 'Country:'
+        self.fields['postcode'].label = 'Postcode:'
+        self.fields['town_or_city'].label = 'Town or City:'
+        self.fields['street_address1'].label = 'Street Address 1:'
+        self.fields['street_address2'].label = 'Street Address 2:'
+        self.fields['county'].label = 'County:' {% endcomment %}

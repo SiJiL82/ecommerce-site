@@ -1,4 +1,5 @@
 from django import forms
+from crispy_forms.helper import FormHelper
 from .models import Order
 
 
@@ -23,24 +24,21 @@ class OrderForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'country': 'Country',
-            'postcode': 'Postcode',
-            'town_or_city': 'Town or City',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
-            'county': 'County',
-        }
+        self.fields['full_name'].label = 'Full Name:'
+        self.fields['email'].label = 'Email Address:'
+        self.fields['phone_number'].label = 'Phone Number:'
+        self.fields['country'].label = 'Country:'
+        self.fields['postcode'].label = 'Postcode:'
+        self.fields['town_or_city'].label = 'Town or City:'
+        self.fields['street_address1'].label = 'Street Address 1:'
+        self.fields['street_address2'].label = 'Street Address 2:'
+        self.fields['county'].label = 'County:'
+
+        self.fields['country'].disabled = True
+
+        self.helper = FormHelper()
+        self.helper.form_show_labels = False
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].label = False
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].widget.attrs['placeholder'] = placeholder
