@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid px-0">
+        <div class="row brand-banner">
+            <div class="col text-center">
+                <div class="">
+                    <h2>Order Confirmed</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 px-5">
+                <h3 class="text-brand">Thank you for your order!</h3>
+                <p>Your order information is below.</p>
+                <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>                
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 px-5">
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
