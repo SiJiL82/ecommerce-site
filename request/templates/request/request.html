@@ -20,7 +20,7 @@
         </div>
         {% if user.is_authenticated %}
             <div class="row justify-content-center mt-4 mx-sm-1">
-                <div class="col-md-12 col-lg-8 col-xl-6">
+                <div class="col-sm-12 col-md-8 col-xl-6 px-5">
                     <h3 class="mt-2 text-brand">Place a new request:</h3>
                     <p>We'll then get in touch with you via email to discuss specifics!</p>
                     <form method="post">
@@ -57,7 +57,7 @@
             </div>
         {% else %}
             <div class="row justify-content-center mt-4 mx-sm-1">
-                <div class="col-md-12 col-lg-8 col-xl-6 text-center">
+                <div class="col-sm-12 col-md-8 col-xl-6 px-5 text-center">
                     To place a request for a custom made product, please <a class="text-brand-underline-hover" href="{% url 'account_login' %}">sign in</a>
                     or <a class="text-brand-underline-hover" href="{% url 'account_signup' %}">sign up</a> if you don't already have an account.
                 </div>

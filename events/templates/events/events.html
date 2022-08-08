@@ -20,7 +20,7 @@
         </div>
         {% if user.is_authenticated and user.is_superuser %}
             <div class="row justify-content-center mt-4 mx-sm-1">
-                <div class="col-md-12 col-lg-8 col-xl-6">
+                <div class="col-sm-12 col-md-8 col-xl-6 px-5">
                     <h2 class="mt-2 text-brand">Add a new event:</h2>
                     <form method="post">
                         {% csrf_token %}
@@ -47,7 +47,7 @@
             </div>
         {% endif %}
         <div class="row justify-content-center mt-4 mx-sm-1">
-            <div class="col-md-12 col-lg-8 col-xl-6">
+            <div class="col-sm-12 col-md-8 col-xl-6 px-5">
                 {% for event in events %}
                     <div class="row border-brand-highlight-medium rounded mx-auto mb-4">
                         <div class="col-1">
