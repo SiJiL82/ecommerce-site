@@ -3,9 +3,26 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
-
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 {% block content %}
-<h1>{% trans "Account Inactive" %}</h1>
-
-<p>{% trans "This account is inactive." %}</p>
+    <div class="container-fluid px-0">
+        <div class="row brand-banner">
+            <div class="col text-center">
+                <div class="">
+                    <h2>Account Inactive</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-6 col-lg-6 px-5 text-center">
+                <p>{% trans "This account is inactive." %}</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
