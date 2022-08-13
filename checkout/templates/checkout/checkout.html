@@ -44,8 +44,8 @@
                         <div class="col-9">{{ order_form.postcode | as_crispy_field }}</div>
                         <div class="col-3"><strong>{{ order_form.county.label }}</strong></div>
                         <div class="col-9">{{ order_form.county | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.country.label }}</strong></div>
-                        <div class="col-9">{{ order_form.country | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ order_form.country.label }}</strong><small> (2 letter code)</small></div>
+                        <div class="col-9 mb-0">{{ order_form.country | as_crispy_field }}</div>
                     </div>                    
                     <div class="form-check text-center mb-2">
                         {% if user.is_authenticated %}
