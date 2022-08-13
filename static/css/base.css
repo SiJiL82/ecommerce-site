@@ -185,3 +185,11 @@ a[href^="mailto:"]:hover {
     border-radius: .25rem;
     background-color: white;
 }
+
+select, select option {
+    color: black;
+}
+
+select:invalid, select option[value=""] {
+    color: rgb(var(--brand-banner-colour)) !important;
+}

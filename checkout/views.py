@@ -53,7 +53,12 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_basket = json.dumps(basket)
+            order.save()
+
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -107,7 +112,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        order_form = OrderForm(initial={'country': 'GB'})
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,

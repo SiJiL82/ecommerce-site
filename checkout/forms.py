@@ -33,7 +33,6 @@ class OrderForm(forms.ModelForm):
         self.fields['street_address1'].label = 'Street Address 1:'
         self.fields['street_address2'].label = 'Street Address 2:'
         self.fields['county'].label = 'County:'
-        # self.fields['country'].disabled = True
 
         self.helper = FormHelper()
         self.helper.form_show_labels = False
