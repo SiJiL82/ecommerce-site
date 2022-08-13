@@ -7,6 +7,14 @@ def profile(request):
     """ Display the user's profile """
 
     profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            # TODO: Add success message
+            #  messages.success(request, 'Details updated successfully')
+
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
