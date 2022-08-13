@@ -35,6 +35,8 @@ ALLOWED_HOSTS = [env('HEROKU_APP_NAME'), '127.0.0.1']
 
 SITE_ID = 1
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -111,10 +113,10 @@ AUTHENTICATION_BACKENDS = [
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login'
+LOGIN_URL = '/accountslogin'
 LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'ecommercesite.wsgi.application'
