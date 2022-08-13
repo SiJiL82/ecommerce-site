@@ -19,8 +19,41 @@
             </div>
         </div>
         <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-8 col-xl-6 px-5">                
+                <form action="{% url 'profile' %}" class="mt-3" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    <h3 class="mt-2 text-brand">Default Phone Number:</h3>
+                    <div class="row">
+                        <div class="col-3"><strong>{{ form.default_phone_number.label }}</strong></div>
+                        <div class="col-9">{{ form.default_phone_number | as_crispy_field }}</div>
+                    </div>
+                    <hr class="mt-0 mb-3 border-brand-highlight-thin">
+                    <h3 class="mt-2 text-brand">Default Delivery Address:</h3>
+                    <div class="row">
+                        <div class="col-3"><strong>{{ form.default_street_address1.label }}</strong></div>
+                        <div class="col-9">{{ form.default_street_address1 | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ form.default_street_address2.label }}</strong></div>
+                        <div class="col-9">{{ form.default_street_address2 | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ form.default_town_or_city.label }}</strong></div>
+                        <div class="col-9">{{ form.default_town_or_city | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ form.default_postcode.label }}</strong></div>
+                        <div class="col-9">{{ form.default_postcode | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ form.default_county.label }}</strong></div>
+                        <div class="col-9">{{ form.default_county | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ form.default_country.label }}</strong></div>
+                        <div class="col-9 mb-0">{{ form.default_country | as_crispy_field }}</div>
+                    </div>
+                    <button type="submit" class="btn w-100 border-brand-medium btn-brand">Update details</button>          
+                </form>
+                <hr class="mt-3 mb-3 border-brand-highlight-thin">
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
             <div class="col-sm-12 col-md-8 col-xl-6 px-5">
-                {{ profile }}
+                <h3 class="mt-2 text-brand">Your Orders:</h3>
+                <p>
+                    {{ orders }}
+                </p>
             </div>
         </div>
     </div>
