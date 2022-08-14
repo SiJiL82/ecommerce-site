@@ -10,6 +10,7 @@ from products.models import Product
 from .models import Order, OrderLineItem
 from .forms import OrderForm
 from django.conf import settings
+from django.contrib import messages
 from basket.contexts import basket_contents
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
@@ -30,9 +31,11 @@ def cache_checkout_data(request):
 
         return HttpResponse(status=200)
     except Exception as e:
-        # TODO: Add as error message
-        print(request, 'Sorry, your payment cannot be processed right now.\
-            Please try again later.')
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed right now.\
+            Please try again later.'
+        )
         return HttpResponse(content=e, status=400)
 
 
@@ -82,12 +85,12 @@ def checkout(request):
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
-                    # TODO: Add error message here
-                    # messages.error(request, (
-                    # "One of the products in your basket wasn't
-                    # found in our database. "
-                    # "Please call us for assistance!")
-                    # )
+                    messages.error(
+                        request,
+                        "One of the products in your basket wasn't \
+                        found in our database. \
+                        Please call us for assistance!"
+                    )
                     order.delete()
                     return redirect(reverse('view_basket'))
             request.session['save_info'] = 'save-info' in request.POST
@@ -97,9 +100,11 @@ def checkout(request):
             )
         else:
             print(request.error)
-            # TODO: add error message here
-            # messages.error(request, 'There was an error with your form. \
-            # Please double check your information.')
+            messages.error(
+                request,
+                'There was an error with your form. \
+                Please double check your information.'
+            )
     else:
         basket = request.session.get('basket', {})
         if not basket:

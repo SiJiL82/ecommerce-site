@@ -5,6 +5,7 @@ from django.shortcuts import (
     get_object_or_404,
     HttpResponse
 )
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Event
 from datetime import datetime, timedelta
@@ -28,6 +29,7 @@ def view_events(request):
         new_event_form = NewEventForm(data=request.POST)
         if new_event_form.is_valid():
             new_event_form.save()
+            messages.success(request, 'New event saved successfully!')
 
     return render(request, 'events/events.html', context)
 
@@ -42,6 +44,7 @@ def remove_event(request, eventid):
     try:
         event = get_object_or_404(Event, pk=eventid)
         event.delete()
+        messages.info(request, 'Event deleted')
         return HttpResponse(status=200)
     except Exception:
         return HttpResponse(status=500)

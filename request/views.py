@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import NewRequestForm
 from .models import Request
 
@@ -10,8 +11,11 @@ def request(request):
     if request.user.is_authenticated:
         my_requests = Request.objects.filter(
             user_id=request.user, fulfilled=False)
+    form = NewRequestForm(initial={
+        'name': request.user.get_full_name()
+    })
     context = {
-        'new_request_form': NewRequestForm(),
+        'new_request_form': form,
         'my_requests': my_requests
     }
 
@@ -22,6 +26,7 @@ def request(request):
             new_request.user_id = request.user
             new_request.email_address = request.user.email
             new_request.save()
+            messages.success(request, 'Request saved successfully!')
         return render(request, 'request/request.html', context)
     else:
         return render(request, 'request/request.html', context)
@@ -34,6 +39,7 @@ def remove_request(request, requestid):
     try:
         selected_request = get_object_or_404(Request, pk=requestid)
         selected_request.delete()
+        messages.info(request, 'Request deleted')
         return HttpResponse(status=200)
     except Exception:
         return HttpResponse(status=500)
@@ -46,8 +52,11 @@ def update_request(request, requestid):
     selected_request = get_object_or_404(Request, pk=requestid)
 
     if request.method == 'POST':
+        form = NewRequestForm(initial={
+            'name': request.user.get_full_name()
+        })
         context = {
-            'new_request_form': NewRequestForm(),
+            'new_request_form': form,
             'my_requests': Request.objects.filter(user_id=request.user,
                                                   fulfilled=False)
         }
@@ -71,7 +80,13 @@ def update_request(request, requestid):
                 date_created=selected_request.date_created
             )
             req.save()
-
+            messages.success(request, 'Request updated!')
+        else:
+            messages.error(
+                request,
+                'Could not update form details, \
+                please ensure form is completed correctly.'
+            )
         return render(request, 'request/request.html', context)
     else:
         request_form = NewRequestForm(initial={
@@ -84,5 +99,4 @@ def update_request(request, requestid):
         context = {
             'request_form': request_form
         }
-
         return render(request, 'request/request_update.html', context)
