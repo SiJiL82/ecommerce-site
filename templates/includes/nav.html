@@ -24,13 +24,9 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{% url 'products' %}" >All Products</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=leggings">Leggings</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=dresses">Dresses</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=rompers">Rompers</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=jumpers">Jumpers</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=dungarees">Dungarees</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=shirts">Shirts</a>
-                                <a class="dropdown-item" href="{% url 'products' %}?category=accessories">Accessories</a>
+                                {% for category in categories %}
+                                    <a class="dropdown-item" href="{% url 'products' %}?category={{ category }}">{{ category.plural_name }}</a>
+                                {% endfor %}
                             </div>
                         </li>
                         <li class="nav-item">

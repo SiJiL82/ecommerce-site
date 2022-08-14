@@ -93,6 +93,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'basket.contexts.basket_contents',
+                'products.contexts.categories'
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
