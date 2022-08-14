@@ -39,6 +39,6 @@ class UserProfileForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_show_labels = False
 
-        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
+        self.fields['first_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
