@@ -158,16 +158,24 @@ a[href^="mailto:"]:hover {
   }
 
 .header-container {
-    padding-top: 83px;
+    padding-top: 153px;
 }
 
-/* Fixed top navbar only on medium and up */
-@media (min-width: 768px) {
+/* Fixed top navbar medium */
+@media (max-width: 990px) {
     .header-container {
-        padding-top: 153px;
+        padding-top: 169px;
     }
 }
-/* Fixed top navbar only on medium and up */
+
+/* Fixed top navbar small */
+@media (max-width: 767px) {
+    .header-container {
+        padding-top: 83px;
+    }
+}
+
+/* Fixed top navbar xs */
 @media (max-width: 510px) {
     .header-container {
         padding-top: 56px;
@@ -190,10 +198,6 @@ a[href^="mailto:"]:hover {
 
 .products-summary {
     min-height: 77px;
-}
-
-.card-body {
-    max-width: 900px;
 }
 
 .card-footer {
