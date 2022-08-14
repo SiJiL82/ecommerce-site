@@ -65,7 +65,7 @@
                             {% for order in orders %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
+                                        <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}" class="text-brand"><small>{{ order.order_number|truncatechars:8 }}</small></a>
                                     </td>
                                     <td>
                                         {{ order.date }}
@@ -77,7 +77,7 @@
                                                     {% if item.product.has_sizes %}
                                                         Size {{ item.product.size }}
                                                     {% endif %}
-                                                    {{ item.product.name }} x{{ item.quantity }}
+                                                    {{ item.product.friendly_name }} {{ item.product.category }} x{{ item.quantity }}
                                                 </li>
                                             {% endfor %}
                                         </ul>
