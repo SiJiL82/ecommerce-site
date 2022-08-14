@@ -24,6 +24,10 @@
                     {% csrf_token %}
                     <h3 class="mt-2 text-brand">Default Contact Details:</h3>
                     <div class="row">
+                        <div class="col-3"><strong>{{ form.first_name.label }}</strong></div>
+                        <div class="col-9">{{ form.first_name | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ form.last_name.label }}</strong></div>
+                        <div class="col-9">{{ form.last_name | as_crispy_field }}</div>
                         <div class="col-3"><strong>{{ form.default_phone_number.label }}</strong></div>
                         <div class="col-9">{{ form.default_phone_number | as_crispy_field }}</div>
                     </div>
