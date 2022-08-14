@@ -56,7 +56,8 @@
                 {% empty %}
                     <div class="col text-center">
                         <h3 class="text-brand ">Sorry, there are currently no {{ current_category }} available</h3>
-                        <p>Please choose another product type from the menu!</p>
+                        <p>Please choose another product type from the menu, or view <a href="{% url 'products' %}" class="text-brand"><strong>all products</strong></a> currently available!</p>
+                        <p>Or why not <a href="{% url 'request' %}" class="text-brand"><strong>request a custom item</strong></a>?</p>
                     </div>
                 {% endfor %}
             </div>
