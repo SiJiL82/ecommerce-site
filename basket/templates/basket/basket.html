@@ -4,15 +4,8 @@
 {% block page_header %}
 {% endblock %}
 
+{% block banner_title %}Shopping Basket{% endblock banner_title %}
 {% block content %}
-  <div class="container-fluid px-0">
-    <div class="row brand-banner">
-      <div class="col text-center">
-        <div class="">
-          <h2>Shopping Basket</h2>
-        </div>
-      </div>
-    </div>
     <section class="row justify-content-center">
       <div class="col-md-auto my-auto">
         {% if basket_items %}
@@ -74,7 +67,6 @@
         {% endif %}
       </div>
     </section>
-  </div>
 {% endblock %}
 
 {% block postloadjs %}

@@ -4,61 +4,53 @@
 {% block page_header %}
 {% endblock %}
 
+{% block banner_title %}Request a custom product{% endblock banner_title %}
 {% block content %}
-    <div class="container-fluid px-0">
-        <div class="row brand-banner">
-            <div class="col text-center">
-                <div class="">
-                    <h2>Request a custom product</h2>
-                </div>
+    {% if user.is_authenticated %}
+        <div class="row justify-content-center mt-4 mx-sm-1">
+            <div class="col-sm-12 col-md-8 col-xl-6 px-5">
+                <h3 class="mt-2 text-brand">Place a new request:</h3>
+                <p>We'll then get in touch with you via email to discuss specifics!</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ new_request_form | crispy }}
+                    <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
+                </form>
             </div>
         </div>
-        {% if user.is_authenticated %}
-            <div class="row justify-content-center mt-4 mx-sm-1">
-                <div class="col-sm-12 col-md-8 col-xl-6 px-5">
-                    <h3 class="mt-2 text-brand">Place a new request:</h3>
-                    <p>We'll then get in touch with you via email to discuss specifics!</p>
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ new_request_form | crispy }}
-                        <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col">
-                    {% if my_requests %}
+        <hr>
+        <div class="row">
+            <div class="col">
+                {% if my_requests %}
+                    <div class="row justify-content-center mt-4 mx-sm-1">
+                        <div class="col-md-12 col-lg-8 col-xl-6">
+                            <h3 class="mt-2 text-brand">Your open requests:</h3>
+                        </div>
+                    </div>
+                    {% for request in my_requests %}
                         <div class="row justify-content-center mt-4 mx-sm-1">
                             <div class="col-md-12 col-lg-8 col-xl-6">
-                                <h3 class="mt-2 text-brand">Your open requests:</h3>
+                                <p><strong>Date Requested: </strong>{{ request.date_created }}</p>
+                                <p><strong>Category: </strong>{{ request.category|capfirst }}</p>
+                                <p><strong>Size: </strong>{{ request.size }}</p>
+                                <p><strong>Description: </strong>{{ request.description }}</p>
+                                <p><strong>Delete Request: </strong><a class="remove-request remove-pointer" id="remove_{{ request.id }}"><i class="fas fa-trash"></i></a></p>
+                                <p><a href="{% url 'update_request' request.id %}">Update request details</a></p>
+                                <hr class="w-100">
                             </div>
                         </div>
-                        {% for request in my_requests %}
-                            <div class="row justify-content-center mt-4 mx-sm-1">
-                                <div class="col-md-12 col-lg-8 col-xl-6">
-                                    <p><strong>Date Requested: </strong>{{ request.date_created }}</p>
-                                    <p><strong>Category: </strong>{{ request.category|capfirst }}</p>
-                                    <p><strong>Size: </strong>{{ request.size }}</p>
-                                    <p><strong>Description: </strong>{{ request.description }}</p>
-                                    <p><strong>Delete Request: </strong><a class="remove-request remove-pointer" id="remove_{{ request.id }}"><i class="fas fa-trash"></i></a></p>
-                                    <p><a href="{% url 'update_request' request.id %}">Update request details</a></p>
-                                    <hr class="w-100">
-                                </div>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
+                    {% endfor %}
+                {% endif %}
             </div>
-        {% else %}
-            <div class="row justify-content-center mt-4 mx-sm-1">
-                <div class="col-sm-12 col-md-8 col-xl-6 px-5 text-center">
-                    To place a request for a custom made product, please <strong><a class="text-brand-underline-hover" href="{% url 'account_login' %}">sign in</a></strong>
-                    or <strong><a class="text-brand-underline-hover" href="{% url 'account_signup' %}">sign up</a></strong> if you don't already have an account.
-                </div>
+        </div>
+    {% else %}
+        <div class="row justify-content-center mt-4 mx-sm-1">
+            <div class="col-sm-12 col-md-8 col-xl-6 px-5 text-center">
+                To place a request for a custom made product, please <strong><a class="text-brand-underline-hover" href="{% url 'account_login' %}">sign in</a></strong>
+                or <strong><a class="text-brand-underline-hover" href="{% url 'account_signup' %}">sign up</a></strong> if you don't already have an account.
             </div>
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
 {% endblock %}
 {% block postloadjs %}
 	{{ block.super }}

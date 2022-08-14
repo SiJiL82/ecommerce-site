@@ -5,19 +5,12 @@
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 {% block page_header %}
 {% endblock %}
+
+{% block banner_title %}Verify Your E-mail Address{% endblock banner_title %}
 {% block content %}
-    <div class="container-fluid px-0">
-        <div class="row brand-banner">
-            <div class="col text-center">
-                <div class="">
-                    <h2>Verify Your E-mail Address</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-4">
-            <div class="col-sm-12 col-md-6 col-lg-6 px-5 text-center">
-                <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
-            </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-sm-12 col-md-6 col-lg-6 px-5 text-center">
+            <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
         </div>
     </div>
 {% endblock %}

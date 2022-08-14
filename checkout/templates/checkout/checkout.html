@@ -4,85 +4,77 @@
 {% block page_header %}
 {% endblock %}
 
+{% block banner_title %}Checkout{% endblock banner_title %}
 {% block content %}
-    <div class="container-fluid px-0">
-        <div class="row brand-banner">
-            <div class="col text-center">
-                <div class="">
-                    <h2>Checkout</h2>
+    <div class="row justify-content-center mt-4 mx-1 mx-sm-2">
+        <div class="col-sm-12 col-md-8 col-xl-6 px-5">
+            <h3 class="text-brand">Please enter your contact details, address and payment information:</h3>
+            <p class="small"><span class="text-brand">*</span> = required</p>
+            <form method="post" action="{% url 'checkout' %}" id="payment-form">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-3"><strong>{{ order_form.full_name.label }}<span class="text-brand">*</span></strong></div>
+                    <div class="col-9">{{ order_form.full_name | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.email.label }}<span class="text-brand">*</span></strong></div>
+                    <div class="col-9">{{ order_form.email | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.phone_number.label }}<span class="text-brand">*</span></strong></div>
+                    <div class="col-9">{{ order_form.phone_number | as_crispy_field }}</div>
                 </div>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-4 mx-1 mx-sm-2">
-            <div class="col-sm-12 col-md-8 col-xl-6 px-5">
-                <h3 class="text-brand">Please enter your contact details, address and payment information:</h3>
-                <p class="small"><span class="text-brand">*</span> = required</p>
-                <form method="post" action="{% url 'checkout' %}" id="payment-form">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-3"><strong>{{ order_form.full_name.label }}<span class="text-brand">*</span></strong></div>
-                        <div class="col-9">{{ order_form.full_name | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.email.label }}<span class="text-brand">*</span></strong></div>
-                        <div class="col-9">{{ order_form.email | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.phone_number.label }}<span class="text-brand">*</span></strong></div>
-                        <div class="col-9">{{ order_form.phone_number | as_crispy_field }}</div>
-                    </div>
-                    <hr class="mt-0 mb-3 border-brand-highlight-thin">
-                    <div class="row">
-                        <div class="col-3"><strong>{{ order_form.street_address1.label }}<span class="text-brand">*</span></strong></div>
-                        <div class="col-9">{{ order_form.street_address1 | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.street_address2.label }}</strong></div>
-                        <div class="col-9">{{ order_form.street_address2 | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.town_or_city.label }}<span class="text-brand">*</span></strong></div>
-                        <div class="col-9">{{ order_form.town_or_city | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.postcode.label }}<span class="text-brand">*</span></strong></div>
-                        <div class="col-9">{{ order_form.postcode | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.county.label }}</strong></div>
-                        <div class="col-9">{{ order_form.county | as_crispy_field }}</div>
-                        <div class="col-3"><strong>{{ order_form.country.label }}</strong></div>
-                        <div class="col-9 mb-0">{{ order_form.country | as_crispy_field }}</div>
-                    </div>                    
-                    <div class="form-check text-center mb-2">
-                        {% if user.is_authenticated %}
-                            <label for="id-save-info" class="form-check-label">Save this information to my profile</label>
-                            <input type="checkbox" name="save-info" id="id-save-info" class="form-check-input ml-2 mr-0">
-                        {% else %}
-                            <label for="id-save-info" class="form-check-label">
-                                <a href="{% url 'account_signup' %}" class="text-brand-underline-hover">Create an account</a> or
-                                <a href="{% url 'account_login' %}" class="text-brand-underline-hover">login to save this information.</a>
-                            </label>
-                        {% endif %}
-                    </div>
-                    <hr class="mt-0 mb-3 border-brand-highlight-thin">
-                    <div class="row">
-                        <div class="col-3"><strong>Card Details:</strong></div>
-                        <div class="col-9">
-                            <div class="mb-3" id="card-element">
-                                <!-- Stripe card details will be inserted here -->
-                            </div>
-                        </div>
-                        <div class="col-3"></div>
-                        <div class="col-9">
-                            <div class="mb-3 text-danger" id="card-errors" role="alert">
-                                <!-- Stripe card errors will be inserted here -->
-                            </div>
-                        </div>
-                        <input type="hidden" name="client_secret" value="{{ client_secret }}">
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 mx-2 mx-sm-0">
-                            <a href="{% url 'view_basket' %}" class="btn w-100 border-brand-medium btn-brand"><i class="fas fa-shopping-basket text-brand"></i> Adjust Basket</a>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 my-2 my-sm-0 mx-2 mx-sm-0">
-                            <button type="submit" class="btn w-100 border-brand-medium btn-brand"><i class="fas fa-lock text-brand"></i> Complete Order</button>
-                            <p class="small text-danger my-0 text-center">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
-                            </p>
+                <hr class="mt-0 mb-3 border-brand-highlight-thin">
+                <div class="row">
+                    <div class="col-3"><strong>{{ order_form.street_address1.label }}<span class="text-brand">*</span></strong></div>
+                    <div class="col-9">{{ order_form.street_address1 | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.street_address2.label }}</strong></div>
+                    <div class="col-9">{{ order_form.street_address2 | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.town_or_city.label }}<span class="text-brand">*</span></strong></div>
+                    <div class="col-9">{{ order_form.town_or_city | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.postcode.label }}<span class="text-brand">*</span></strong></div>
+                    <div class="col-9">{{ order_form.postcode | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.county.label }}</strong></div>
+                    <div class="col-9">{{ order_form.county | as_crispy_field }}</div>
+                    <div class="col-3"><strong>{{ order_form.country.label }}</strong></div>
+                    <div class="col-9 mb-0">{{ order_form.country | as_crispy_field }}</div>
+                </div>                    
+                <div class="form-check text-center mb-2">
+                    {% if user.is_authenticated %}
+                        <label for="id-save-info" class="form-check-label">Save this information to my profile</label>
+                        <input type="checkbox" name="save-info" id="id-save-info" class="form-check-input ml-2 mr-0">
+                    {% else %}
+                        <label for="id-save-info" class="form-check-label">
+                            <a href="{% url 'account_signup' %}" class="text-brand-underline-hover">Create an account</a> or
+                            <a href="{% url 'account_login' %}" class="text-brand-underline-hover">login to save this information.</a>
+                        </label>
+                    {% endif %}
+                </div>
+                <hr class="mt-0 mb-3 border-brand-highlight-thin">
+                <div class="row">
+                    <div class="col-3"><strong>Card Details:</strong></div>
+                    <div class="col-9">
+                        <div class="mb-3" id="card-element">
+                            <!-- Stripe card details will be inserted here -->
                         </div>
                     </div>
-                </form>
-            </div>
+                    <div class="col-3"></div>
+                    <div class="col-9">
+                        <div class="mb-3 text-danger" id="card-errors" role="alert">
+                            <!-- Stripe card errors will be inserted here -->
+                        </div>
+                    </div>
+                    <input type="hidden" name="client_secret" value="{{ client_secret }}">
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 mx-2 mx-sm-0">
+                        <a href="{% url 'view_basket' %}" class="btn w-100 border-brand-medium btn-brand"><i class="fas fa-shopping-basket text-brand"></i> Adjust Basket</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 my-2 my-sm-0 mx-2 mx-sm-0">
+                        <button type="submit" class="btn w-100 border-brand-medium btn-brand"><i class="fas fa-lock text-brand"></i> Complete Order</button>
+                        <p class="small text-danger my-0 text-center">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
+                        </p>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}
