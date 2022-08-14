@@ -1,4 +1,10 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    redirect,
+    render,
+    reverse,
+    get_object_or_404,
+    HttpResponse
+)
 from django.contrib.auth.decorators import login_required
 from .models import Event
 from datetime import datetime, timedelta
@@ -22,18 +28,20 @@ def view_events(request):
         new_event_form = NewEventForm(data=request.POST)
         if new_event_form.is_valid():
             new_event_form.save()
-        return render(request, 'events/events.html', context)
-    else:
-        return render(request, 'events/events.html', context)
+
+    return render(request, 'events/events.html', context)
 
 
 @login_required
 def remove_event(request, eventid):
     """Remove the event """
 
-    try:
-        event = get_object_or_404(Event, pk=eventid)
-        event.delete()
-        return HttpResponse(status=200)
-    except Exception:
-        return HttpResponse(status=500)
+    if request.user.is_superuser:
+        try:
+            event = get_object_or_404(Event, pk=eventid)
+            event.delete()
+            return HttpResponse(status=200)
+        except Exception:
+            return HttpResponse(status=500)
+    else:
+        return redirect(reverse('events'))
