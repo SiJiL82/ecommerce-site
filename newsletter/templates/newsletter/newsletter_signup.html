@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid px-0">
+        <div class="row brand-banner">
+            <div class="col text-center">
+                <div class="">
+                    <h2>Signup To Our Newsletter!</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-8 col-xl-6 px-5">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-3"><strong>{{ newsletter_signup_form.full_name.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ newsletter_signup_form.full_name | as_crispy_field }}</div>
+                        <div class="col-3"><strong>{{ newsletter_signup_form.email.label }}<span class="text-brand">*</span></strong></div>
+                        <div class="col-9">{{ newsletter_signup_form.email | as_crispy_field }}</div>
+                    </div>
+                    <button type="submit" class="btn w-100 border-brand-medium btn-brand">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
