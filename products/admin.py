@@ -7,6 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
+        'plural_name'
     )
 
 
@@ -20,6 +21,16 @@ class ProductsAdmin(admin.ModelAdmin):
         'friendly_name',
         'category',
         'price',
+    )
+    fields = (
+        'sku',
+        'friendly_name',
+        'category',
+        'description',
+        'price',
+        'image',
+        'sizes',
+        'ready_to_ship',
     )
     ordering = ('sku',)
 
