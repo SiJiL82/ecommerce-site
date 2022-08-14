@@ -24,6 +24,12 @@ def profile(request):
             form.save()
             # TODO: Add success message
             #  messages.success(request, 'Details updated successfully')
+        # else:
+            # TODO: Add failure message
+            # messages.error(request, 'Update failed. Please ensure
+            # the form is valid)
+    else:
+        form = UserProfileForm(instance=profile)
 
     form = UserProfileForm(instance=profile, initial={
         'first_name': profile.user.first_name,
