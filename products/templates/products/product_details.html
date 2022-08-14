@@ -15,9 +15,9 @@
         <div class="row justify-content-center">
             <div class="col-md-auto my-auto">
                 <div class="card h-100">
-                    <h2 class="ml-4 mt-4 text-brand">{{ product.friendly_name }} {{ product.category }}</h2>
+                    <h2 class="ml-4 mt-4 text-brand">{{ product.friendly_name }} {{ product.category.friendly_name }}</h2>
                     <div class="card-body">
-                        <img src="{{ product.image.url }}" alt="" class="img-fluid">
+                        <img src="{{ product.image.url }}" alt="" class="img-fluid w-100 product-detail-img">
                         <p class="mt-2">{{ product.description }}</p>
                         <p>
                             {% if product.ready_to_ship %}
