@@ -43,16 +43,16 @@ select:focus,
 }
 
 .bg-danger {
-    background-color: rgb(111, 221, 139) !important;
+    background-color: rgb(var(--danger-colour)) !important;
     color: white;
 }
 
 .bg-info {
-    background-color: rgb(111, 221, 139) !important;
+    background-color: rgb(var(--info-colour)) !important;
 }
 
 .bg-warning {
-    background-color: rgb(111, 221, 139) !important;
+    background-color: rgb(var(--warning-colour)) !important;
 }
 /* end */
 
