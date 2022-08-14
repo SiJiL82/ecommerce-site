@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.contrib.auth.decorators import login_required
 from .models import Event
 from datetime import datetime, timedelta
 from .forms import NewEventForm
@@ -26,6 +27,7 @@ def view_events(request):
         return render(request, 'events/events.html', context)
 
 
+@login_required
 def remove_event(request, eventid):
     """Remove the event """
 

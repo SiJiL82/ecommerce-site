@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.contrib.auth.decorators import login_required
 from .forms import NewRequestForm
 from .models import Request
 
@@ -26,6 +27,7 @@ def request(request):
         return render(request, 'request/request.html', context)
 
 
+@login_required
 def remove_request(request, requestid):
     """Remove the request """
 
@@ -37,6 +39,7 @@ def remove_request(request, requestid):
         return HttpResponse(status=500)
 
 
+@login_required
 def update_request(request, requestid):
     """ Update the specified request """
 
