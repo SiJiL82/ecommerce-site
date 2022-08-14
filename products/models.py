@@ -41,7 +41,7 @@ class Product(models.Model):
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=False, blank=False)
     sizes = MultiSelectField(choices=SIZE_CHOICES)
     ready_to_ship = models.BooleanField(default=False)
 

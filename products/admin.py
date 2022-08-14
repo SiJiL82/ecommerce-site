@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Category, Product, Review
+from .forms import ProductsAdminForm
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -16,23 +17,15 @@ admin.site.register(Category, CategoryAdmin)
 
 class ProductsAdmin(admin.ModelAdmin):
     """ Products admin screen config """
+
     list_display = (
-        'sku',
-        'friendly_name',
-        'category',
-        'price',
-    )
-    fields = (
-        'sku',
-        'friendly_name',
-        'category',
-        'description',
-        'price',
-        'image',
-        'sizes',
-        'ready_to_ship',
-    )
+            'sku',
+            'friendly_name',
+            'category',
+            'price',
+        )
     ordering = ('sku',)
+    form = ProductsAdminForm
 
 
 admin.site.register(Product, ProductsAdmin)
