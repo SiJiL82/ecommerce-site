@@ -14,15 +14,13 @@ class UserProfileForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        self.fields['default_phone_number'].label = 'Default Phone Number:'
-        self.fields['default_country'].label = 'Default Country:'
-        self.fields['default_postcode'].label = 'Default Postcode:'
-        self.fields['default_town_or_city'].label = 'Default Town or City:'
-        self.fields['default_street_address1'].label = 'Default\
-            Street Address 1:'
-        self.fields['default_street_address2'].label = 'Default\
-            Street Address 2:'
-        self.fields['default_county'].label = 'Default County:'
+        self.fields['default_phone_number'].label = 'Phone Number:'
+        self.fields['default_country'].label = 'Country:'
+        self.fields['default_postcode'].label = 'Postcode:'
+        self.fields['default_town_or_city'].label = 'Town or City:'
+        self.fields['default_street_address1'].label = 'Street Address 1:'
+        self.fields['default_street_address2'].label = 'Street Address 2:'
+        self.fields['default_county'].label = 'County:'
 
         self.helper = FormHelper()
         self.helper.form_show_labels = False
