@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from django.utils.safestring import mark_safe
 
 
 def view_basket(request):
@@ -31,6 +33,17 @@ def add_to_basket(request, item_id):
             basket[item_id] = quantity
 
     request.session['basket'] = basket
+    message = """
+        Item added to
+        <a href='{url}' class='text-brand'>
+            <strong>basket</strong>
+        </a>!
+    """
+    basket_url = reverse("view_basket")
+    messages.success(
+        request,
+        mark_safe(message.format(url=basket_url))
+    )
     return redirect(redirect_url)
 
 

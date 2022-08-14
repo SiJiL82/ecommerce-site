@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import NewsletterSignupForm
+from django.contrib import messages
 
 
 def signup(request):
@@ -18,7 +19,6 @@ def signup(request):
         if form.is_valid():
             form.save()
 
-            # TODO:
-            # Add thankyou message
+            messages.success(request, 'Newsletter signup successful!')
 
     return render(request, 'newsletter/newsletter_signup.html', context)

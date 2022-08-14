@@ -50,11 +50,10 @@
             <div class="container-fluid px-0">
                 <div class="row brand-banner">
                     <div class="col text-center">
-                        <div>
-                            <h2>{% block banner_title %}{% endblock banner_title %}</h2>
-                        </div>
+                        <h2>{% block banner_title %}{% endblock banner_title %}</h2>
                     </div>
                 </div>
+                {% include 'includes/messages.html' %}
                 {% block content %}
                 {% endblock %}
             </div>
