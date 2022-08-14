@@ -5,6 +5,10 @@
     --brand-header-background-colour: 182, 187, 212;
     --brand-banner-colour: 219, 219, 219;
     --brand-background-colour: 205, 241, 228;
+    --success-colour: 121, 236, 149;
+    --danger-colour: 233, 96, 96;
+    --warning-colour: 251, 210, 80;
+    --info-colour: 163, 241, 255;
 }
 
 * {
@@ -32,6 +36,25 @@ select:focus,
     border: none;
     box-shadow: 0 0 0 0.2rem rgba(var(--brand-colour), 0.4);
 }
+
+/* Override Bootstrap colours to fit site theme */
+.bg-success {
+    background-color: rgb(var(--success-colour)) !important;
+}
+
+.bg-danger {
+    background-color: rgb(111, 221, 139) !important;
+    color: white;
+}
+
+.bg-info {
+    background-color: rgb(111, 221, 139) !important;
+}
+
+.bg-warning {
+    background-color: rgb(111, 221, 139) !important;
+}
+/* end */
 
 input:checked {
     background-color: rgb(var(--brand-colour));
@@ -131,6 +154,12 @@ a[href^="mailto:"]:hover {
 
 .brand-banner {
     background-color: rgb(var(--brand-banner-colour));
+    margin: 0;
+    padding: 10px 0;
+}
+
+.toast-banner {
+    font-size: large;
     margin: 0;
     padding: 10px 0;
 }
