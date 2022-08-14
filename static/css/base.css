@@ -178,6 +178,28 @@ a[href^="mailto:"]:hover {
     max-width: 128px;
 }
 
+.products-page-img {
+    max-height: 234px;
+    object-fit: contain;
+}
+
+.product-detail-img {
+    max-height: 550px;
+    object-fit: contain;
+}
+
+.products-summary {
+    min-height: 77px;
+}
+
+.card-body {
+    max-width: 900px;
+}
+
+.card-footer {
+    background-color: white;
+}
+
 .remove-pointer {
     cursor: pointer;
 }
@@ -199,3 +221,4 @@ select, select option {
 select:invalid, select option[value=""] {
     color: rgb(var(--brand-header-background-colour)) !important;
 }
+
