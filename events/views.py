@@ -36,12 +36,12 @@ def view_events(request):
 def remove_event(request, eventid):
     """Remove the event """
 
-    if request.user.is_superuser:
-        try:
-            event = get_object_or_404(Event, pk=eventid)
-            event.delete()
-            return HttpResponse(status=200)
-        except Exception:
-            return HttpResponse(status=500)
-    else:
+    if not request.user.is_superuser:
         return redirect(reverse('events'))
+
+    try:
+        event = get_object_or_404(Event, pk=eventid)
+        event.delete()
+        return HttpResponse(status=200)
+    except Exception:
+        return HttpResponse(status=500)
