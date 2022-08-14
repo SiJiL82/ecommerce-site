@@ -180,6 +180,9 @@
                         </div>
                     </section>
                 </div>
+                {% if order_history %}
+                    <p class="mt-4"><a class="btn w-100 border-brand-medium btn-brand" href="{% url 'profile' %}" >Back to order history</a></p>
+                {% endif %}
             </div>
         </div>
     </div>
