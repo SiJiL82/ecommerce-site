@@ -23,7 +23,7 @@
                 {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                         <div class="card h-100">
-                            <img src="{{ product.image.url }}" alt="" class="img-responsive products-page-img">
+                            <img src="{{ product.image.url }}" alt="" class="img-responsive products-page-img mt-sm-3">
                             <div class="card-body">
                                 <div class="details-container">
                                     <a href="{% url 'product_details' product.id %}" class="text-brand"><strong>{{ product.friendly_name }} {{ product.category.friendly_name }}</strong></a>

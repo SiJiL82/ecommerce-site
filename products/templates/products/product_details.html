@@ -11,12 +11,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid mt-md-4">
-        <div class="row justify-content-center">
-            <div class="col-md-auto my-auto">
-                <div class="card h-100">
+    <div class="container-fluid px-0">
+        <div class="row brand-banner">
+            <div class="col text-center">
+                <div class="">
+                    <h2>Product Details</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-sm-12 col-md-8 col-xl-6 px-5 my-auto">
+                <div class="card h-100 w-100">
                     <h2 class="ml-4 mt-4 text-brand">{{ product.friendly_name }} {{ product.category.friendly_name }}</h2>
-                    <div class="card-body">
+                    <div class="card-body w-100">
                         <img src="{{ product.image.url }}" alt="" class="img-fluid w-100 product-detail-img">
                         <p class="mt-2">{{ product.description|linebreaks }}</p>
                         <p>
