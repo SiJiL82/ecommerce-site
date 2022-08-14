@@ -18,6 +18,14 @@
       ]
     },
     {
+      "name": "Stripe Listener",
+      "focus": false,
+      "commands": [
+        "source venv/bin/activate",
+        "stripe listen --forward-to 127.0.0.1:8000/checkout/wh/"
+      ]
+    },
+    {
       "name": "Heroku logs",
       "focus": false,
       "commands": [
