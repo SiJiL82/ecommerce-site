@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [env('HEROKU_APP_NAME'), '127.0.0.1']
 
 SITE_ID = 1
 
-if env('DEVELOPMENT'):
+if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'contact@minisewnsew.co.uk'
 else:
