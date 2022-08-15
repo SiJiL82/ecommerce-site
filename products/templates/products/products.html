@@ -7,7 +7,7 @@
 
 {% block banner_title %}Shop {% if current_category %} for {{ current_category }}{% endif %}{% endblock banner_title %}
 {% block content %}
-    <section class="mt-4 px-md-4 px-xs-1">
+    <div class="mt-4 px-md-4 px-xs-1">
         <div class="row">
             {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -50,5 +50,5 @@
                 </div>
             {% endfor %}
         </div>
-    </section>
+    </div>
 {% endblock %}
