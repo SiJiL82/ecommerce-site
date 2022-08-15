@@ -71,7 +71,7 @@
 
 {% block postloadjs %}
 	{{ block.super }}
-  <script type="text/javascript">
+  <script>
     $('.remove-item').click(function(e) {
       var csrfToken = "{{ csrf_token }}";
       var itemId = $(this).attr('id').split('remove_')[1];
