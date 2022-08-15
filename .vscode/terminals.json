@@ -6,6 +6,7 @@
       "focus": true,
       "commands": [
         "source venv/bin/activate",
+        "export DEVELOPMENT=true",
         "clear"
       ]
     },
