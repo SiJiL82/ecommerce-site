@@ -64,7 +64,7 @@
 
 {% block postloadjs %}
 	{{ block.super }}
-    <script type="text/javascript">
+    <script>
         $('.remove-event').click(function(e) {
             var csrfToken = "{{ csrf_token }}";
             var eventId = $(this).attr('id').split('remove_')[1];
