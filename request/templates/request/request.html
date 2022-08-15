@@ -54,7 +54,7 @@
 {% endblock %}
 {% block postloadjs %}
 	{{ block.super }}
-    <script type="text/javascript">
+    <script>
         $('.remove-request').click(function(e) {
             var csrfToken = "{{ csrf_token }}";
             var requestId = $(this).attr('id').split('remove_')[1];
