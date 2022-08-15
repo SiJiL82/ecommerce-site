@@ -24,6 +24,7 @@ html {
 
 body {
     background-color: rgb(var(--brand-background-colour));
+    font-family: 'Jost', sans-serif;
 }
 
 input:focus,
