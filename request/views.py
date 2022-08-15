@@ -11,9 +11,11 @@ def request(request):
     if request.user.is_authenticated:
         my_requests = Request.objects.filter(
             user_id=request.user, fulfilled=False)
-    form = NewRequestForm(initial={
-        'name': request.user.get_full_name()
-    })
+        form = NewRequestForm(initial={
+            'name': request.user.get_full_name()
+        })
+    else:
+        form = NewRequestForm()
     context = {
         'new_request_form': form,
         'my_requests': my_requests
