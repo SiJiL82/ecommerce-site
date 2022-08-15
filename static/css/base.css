@@ -211,6 +211,11 @@ a[href^="mailto:"]:hover {
     }
 }
 
+.home-logo-img {
+    max-width: 400px;
+    width: 100%;
+}
+
 .basket-img {
     max-width: 128px;
 }
