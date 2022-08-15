@@ -12,6 +12,7 @@ class NewEventForm(forms.ModelForm):
             'start_time',
             'end_time',
             'description',
+            'google_maps_link',
         )
     widgets = {
         'date': forms.DateInput(attrs={
@@ -33,3 +34,4 @@ class NewEventForm(forms.ModelForm):
         self.fields['start_time'].label = 'Start time:'
         self.fields['end_time'].label = 'End time:'
         self.fields['description'].label = 'Description:'
+        self.fields['google_maps_link'].label = 'Map Link:'

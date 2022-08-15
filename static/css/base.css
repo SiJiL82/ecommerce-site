@@ -69,8 +69,20 @@ input:checked {
     background-color: rgb(var(--brand-header-background-colour));
 }
 
-.text-brand {
+.text-brand,
+.icon-brand {
     color: rgb(var(--brand-colour));
+}
+
+a.text-brand:hover {
+    color: rgb(var(--brand-colour));
+    text-decoration: none;
+    border-bottom: 1px solid rgb(var(--brand-colour-highlight));
+}
+
+a.icon-brand:hover {
+    color: rgb(var(--brand-colour-highlight));
+    text-decoration: none;
 }
 
 .border-brand-highlight-thin {
@@ -81,11 +93,7 @@ input:checked {
     border: 2px solid rgb(var(--brand-colour-highlight));
 }
 
-a.text-brand:hover {
-    color: rgb(var(--brand-colour));
-    text-decoration: none;
-    border-bottom: 1px solid rgb(var(--brand-colour-highlight));
-}
+
 
 .nav-link {
     color: rgb(var(--brand-colour)) !important;

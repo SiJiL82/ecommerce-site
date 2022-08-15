@@ -6,6 +6,7 @@ class Event(models.Model):
 
     location_name = models.CharField(max_length=254)
     location_address = models.TextField()
+    google_maps_link = models.URLField(max_length=200)
     date = models.DateField()
     start_time = models.TimeField()
     end_time = models.TimeField()
