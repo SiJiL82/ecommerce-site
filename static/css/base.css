@@ -124,6 +124,12 @@ a.icon-brand:hover {
     }
 }
 
+@media (max-width: 330px) {
+    .brand-header {
+        font-size: 1rem !important;
+    }
+}
+
 a[href^="mailto:"],
 a[href^="tel:"] {
     text-decoration: none;
