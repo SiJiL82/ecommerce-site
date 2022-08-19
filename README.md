@@ -131,10 +131,10 @@ Examples:
 
 ## Navigation Bar
 - A navigation bar with links to all areas of the site is present at the top of every page.
-  - On smaller devices, the menu compacts down into a single button to reduce space used.
+  - On smaller devices, the menu compacts down into a single button to reduce space used.  
 ![Navbar](./docs/assets/features/navbar.png)
 ## Home Page
-- The home page for the site contains an overview of the company and its team members.
+- The home page for the site contains an overview of the company and its team members.  
 ![Home page](./docs/assets/features/homepage.png)
 ## Authentication
 - Users can register with the site by selecting the "Sign Up" link on the Accounts tab of the main menu.
@@ -151,7 +151,7 @@ Examples:
 - The administrator account also permits access to front end areas of the site that are not accessible by non-administrators:
   - Create new entries for the Events page
 ## FAQ Page
-- The FAQ page is a simple content page that presents useful information to the user.
+- The FAQ page is a simple content page that presents useful information to the user.  
 ![FAQs Page](./docs/assets/features/faqs.png)
 ## Request a Product
 - Authenticated users will be presented with a form to complete when viewing the requests page.  
@@ -182,12 +182,12 @@ Examples:
 - Each Product Details page allows users to leave a review for that product via a simple form:  
 ![Review Form](./docs/assets/features/review_form.png)  
 - After a review has been submitted, it shows up under the product.
-  - The rating chosen on the review is converted into a star image for easier identification by other users.
+  - The rating chosen on the review is converted into a star image for easier identification by other users.  
 ![Reviews Left](./docs/assets/features/review_list.png)
 ## Shopping Basket
 - After adding an item to their basket from the product details page, a banner notification appears letting the user know the action was successful and presenting them with a link to their basket.  
 ![Added to Basket](./docs/assets/features/product_added_to_basket.png)
-- The basket page shows the user the details on all the products they have added, along with a Grand Total price:
+- The basket page shows the user the details on all the products they have added, along with a Grand Total price:  
 ![Shopping Basket](./docs/assets/features/shopping_basket.png)  
 - The user can choose to remove items from their basket by clicking the relevant icon next to each item.  
 - If happy with their basket contents, the user can click the "Secure Checkout" button to proceed to checkout.
@@ -197,25 +197,25 @@ Examples:
 ![Checkout Page](./docs/assets/features/checkout_page.png)
 - Checking "Save this information to my profile" will update the user's profile page with the information entered on this form.
 ## Order Confirmation Page
-- After completing the checkout process, the user is shown the order confirmation page.
+- After completing the checkout process, the user is shown the order confirmation page.  
 ![Order Confirmation](./docs/assets/features/order_confirmation.png)
 - They are also sent the same details in a confirmation email.
 ## Account Profile Page
 - When authenticated on the site, the user can view the "Your Profile" page.
-- This page allows the user to view and update their contact and delivery details:
+- This page allows the user to view and update their contact and delivery details:  
 ![Profile Page Details](./docs/assets/features/profile_details.png)
-- They will also see a list of their previous orders:
+- They will also see a list of their previous orders:  
 ![Profile Order History](./docs/assets/features/profile_order_history.png)
 - The Order Number on each order can be clicked to see more details on the order:  
 ![Order History Details](./docs/assets/features/order_details.png)  
 ## Newsletter Signup
 - The site features a page that allows a visitor to opt in to receiving a newsletter from the site.
-- This is a simple form that saves their details into the database, which can be accessed for a mailing list when the newsletter is sent.
+- This is a simple form that saves their details into the database, which can be accessed for a mailing list when the newsletter is sent.  
 ![Newsletter Form](./docs/assets/features/newsletter_form.png)
-- After completing the form, a notification banner shows the user that the sign up was successful.
+- After completing the form, a notification banner shows the user that the sign up was successful.  
 ![Newsletter Signup Success](./docs/assets/features/newsletter_signup_success.png)
 ## Footer
-- At the bottom of each page is a consistent footer, presenting the user with contact details for the site owner, as well as their social media links.
+- At the bottom of each page is a consistent footer, presenting the user with contact details for the site owner, as well as their social media links.  
 ![Footer](./docs/assets/features/footer.png)
 ## Misc
 Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactive for humans.  
