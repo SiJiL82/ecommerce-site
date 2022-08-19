@@ -124,12 +124,14 @@ a.icon-brand:hover {
     }
 }
 
-a[href^="mailto:"] {
+a[href^="mailto:"],
+a[href^="tel:"] {
     text-decoration: none;
     color: black;
 }
 
-a[href^="mailto:"]:hover {
+a[href^="mailto:"]:hover,
+a[href^="tel:"]:hover {
     text-decoration: underline;
 }
 
