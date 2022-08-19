@@ -6,6 +6,20 @@ This project is an ecommerce site allowing the purchase of physical goods, confi
 
 # Design
 ## Business Logic
+## SEO
+SEO keyword research to help the site appear high in rankings:
+- ### Topics:
+- Handmade
+- Clothing
+- Custom
+- For children
+- Durable
+- ### Potential keywords / phrases
+- Handmade children's clothing
+- Custom clothing for children
+- Handmade custom clothing
+- Made to order
+- Long lasting
 ## User Stories
 An agile process was used during the development to track and iterate on features for the site, using GitHub [project](https://github.com/users/SiJiL82/projects/1)  
 Key stories:  
@@ -22,6 +36,7 @@ Key stories:
 ## Events
 ## Product Pages
 ## Shopping Basket
+
 ## Misc
 Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactable by humans.  
 ## Checkout
