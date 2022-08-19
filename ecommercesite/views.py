@@ -9,7 +9,7 @@ def handler404(request, exception):
 
 
 def read_verification_file(request):
-    file = open(settings.STATIC_URL + 'google8ed90ed434c84dc3.html')
+    file = open(settings.STATICFILES_DIRS[0] + '/google8ed90ed434c84dc3.html')
     file_content = file.read()
     file.close()
     return HttpResponse(file_content, content_type="text/plain")
