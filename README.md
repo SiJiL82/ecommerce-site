@@ -4,6 +4,7 @@ The site has bee configured to be a store front for my sister's real business - 
 she wanted to implement, and is unusable on mobile devices as the site is not responsive.  
 This project aims to fix the existing issues she has, by implementing a fully responsive, fully customisable design that she can use and iterate
 on in the future to improve her business presence.  
+The project can be viewed at the currently deployed instance on Heroku: [Mini Sew N Sew](https://minisewnsew.herokuapp.com/)
 
 # Table of Contents
 - [Design](#design)
@@ -130,9 +131,10 @@ Examples:
 ![FAQ Page Responsive](./docs/assets/features/faq_responsive.png)
 
 ## Navigation Bar
-- A navigation bar with links to all areas of the site is present at the top of every page.
-  - On smaller devices, the menu compacts down into a single button to reduce space used.  
+- A navigation bar with links to all areas of the site is present at the top of every page.  
 ![Navbar](./docs/assets/features/navbar.png)
+- On smaller devices, the menu compacts down into a single button to reduce space used.  
+![Navbar Mobile](./docs/assets/features/navbar_mobile.png)
 ## Home Page
 - The home page for the site contains an overview of the company and its team members.  
 ![Home page](./docs/assets/features/homepage.png)
@@ -217,8 +219,8 @@ Examples:
 ## Footer
 - At the bottom of each page is a consistent footer, presenting the user with contact details for the site owner, as well as their social media links.  
 ![Footer](./docs/assets/features/footer.png)
-## Misc
-Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactive for humans.  
+## Miscellaneous
+- Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactive for humans.  
 
 # Testing
 ## User Story Testing
@@ -272,7 +274,11 @@ No products on filters shows helpful page.
 
 # Deployment
 ## Prerequisites
+
 ## Instructions
+- Clone the Github repository:
+  - `git clone https://github.com/SiJiL82/ecommerce-site.git`
+
 
 # Known Bugs
 Presently there are no known bugs with the site.
