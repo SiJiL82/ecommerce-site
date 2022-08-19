@@ -78,24 +78,24 @@ on in the future to improve her business presence.
 ## SEO
 SEO keyword research to help the site appear high in rankings:
 - ### Topics:
-- Handmade
-- Clothing
-- Custom
-- For children
-- Durable
-- Clothing types
+  - Handmade
+  - Clothing
+  - Custom
+  - For children
+  - Durable
+  - Clothing types
 - ### Potential keywords / phrases
-- Handmade children's clothing
-- Custom clothing for children
-- Handmade custom clothing
-- Made to order
-- Long lasting
-- Care and attention
-- Lovingly crafted
-- Quality fabrics
-- Clothes
-- Babies / Children
-- Dresses, Dungarees, Jumpers, Leggings, Rompers, Skirts
+  - Handmade children's clothing
+  - Custom clothing for children
+  - Handmade custom clothing
+  - Made to order
+  - Long lasting
+  - Care and attention
+  - Lovingly crafted
+  - Quality fabrics
+  - Clothes
+  - Babies / Children
+  - Dresses, Dungarees, Jumpers, Leggings, Rompers, Skirts
 ## User Stories
 An agile process was used during the development to track and iterate on features for the site, using GitHub [project](https://github.com/users/SiJiL82/projects/1)  
 ### Key stories:  
