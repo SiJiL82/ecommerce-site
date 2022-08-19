@@ -271,6 +271,27 @@ No products on filters shows helpful page.
   - No validation issues were found.
     - Note that the report contains warnings regarding the use of CSS variables, as the validator does not check these.
   - [CSS](./docs/assets/validation/css.png)
+- Lighthouse scores:
+  - Homepage:  
+  ![Lighthouse Homepage](./docs/assets/validation/lighthouse_homepage.png)
+  - Products Page:  
+  ![Lighthouse Products](./docs/assets/validation/lighthouse_products.png)
+    - Performance could be improved by saving images in a more optimised format with better compression.
+  - Product Details:  
+  ![Lighthouse Product Details](./docs/assets/validation/lighthouse_product_details.png)
+  - Events Page:  
+  ![Lighthouse Events](./docs/assets/validation/lighthouse_events.png)
+  - FAQ Page:  
+  ![Lighthouse FAQs](./docs/assets/validation/lighthouse_faq.png)
+  - Shopping Basket:  
+  ![Lighthouse Basket](./docs/assets/validation/lighthouse_basket.png)
+  - Checkout Page:  
+  ![Lighthouse Checkout](./docs/assets/validation/lighthouse_checkout.png)
+    - Accessibility is not as high as it could be as form elements are missing labels. However this is because the form is using a custom Crispy forms layout, and Crispy forms is not associating the labels in the first column with the input fields.
+  - Order Confirmation:  
+  ![Lighthouse Order Confirmation](./docs/assets/validation/lighthouse_order_confirmation.png)
+  - Account Profile Page:  
+  ![Lighthouse Account](./docs/assets/validation/lighthouse_account.png)
 
 # Deployment
 ## Prerequisites
