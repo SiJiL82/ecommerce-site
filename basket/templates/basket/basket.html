@@ -24,7 +24,7 @@
               {% for item in basket_items %}
                 <tr>
                   <td class="p-3 w-25">
-                    <img src="{{ item.product.image.url }}" alt="" class="img-fluid basket-img">
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.friendly_name }} {{ item.product.category }}" class="img-fluid basket-img">
                   </td>
                   <td class="py-3 w-50">
                     <p class="my-0"><strong>{{ item.product.friendly_name }} {{ item.product.category }}</strong></p>
