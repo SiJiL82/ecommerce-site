@@ -274,11 +274,67 @@ No products on filters shows helpful page.
 
 # Deployment
 ## Prerequisites
-
-## Instructions
-- Clone the Github repository:
-  - `git clone https://github.com/SiJiL82/ecommerce-site.git`
-
+- A [Stripe](https://www.stripe.com) account
+  - Note the Stripe public and secret keys for your account.
+- A [GMail](https://www.gmail.com) account to send emails from the site.
+  - Create an App Password for the account and note this.
+## To Run The Project Locally:
+- Clone the GitHub repository:
+  - Open a terminal to the location you wish to save the project in.
+  - Run `git clone https://github.com/SiJiL82/ecommerce-site.git`
+- Create a [Cloudinary](https://www.cloudinary.com) account
+  - Copy the API Environment Variable (`CLOUDINARY_URL=cloudinary://xxxxxxx`)
+- Inside the repository create a `.env` file with the following contents:
+  - `CLOUDINARY_URL` - API Environment Variable from Cloudinary.
+  - `DATABASE_URL` - Postgres URI.
+  - `HEROKU_APP_NAME` - The name of your Heroku app.
+  - `SECRET_KEY` - Generate a random secret key value.
+  - `EMAIL_HOST_PASS` - App password from your GMail account.
+  - `EMAIL_HOST_USER` - GMail account email address.
+  - `STRIPE_PUBLIC_KEY` - Public Key from your Stripe account.
+  - `STRIPE_SECRET_KEY` - Secret Key from your Stripe account.
+  - `STRIPE_WH_SECRET` - Webhook Secret from your Stripe Webhook Endpoint.
+- Install dependencies:
+  - Install Python and PIP
+  - Run `pip install -r requirements.txt`
+- Run the webserver:
+  - `python3 manage.py runserver`
+## To Deploy The Project To Heroku:
+- Clone the GitHub repository:
+  - Open a terminal to the location you wish to save the project in.
+  - Run `git clone https://github.com/SiJiL82/ecommerce-site.git`
+- Create your own GitHub repository to host the project.
+- Run `git remote set-url origin <Your GitHub Repo Path>` to set the remote repository location to your own repository.
+- Push the files to your repository with `git push`
+- Create a [Heroku](https://heroku.com) account.
+- Create a new Heroku application.
+- Go to the Deploy tab of the application.
+  - Link your GitHub account.
+  - Connect the application to the repository you created.
+- Go to the Resources tab.
+  - Click Find More Addons and add:
+    - Cloudinary
+      - Open Cloudinary from the resource it created and copy the API Environment Variable (`CLOUDINARY_URL=cloudinary://xxxxxxx`)
+    - Heroku Postgres
+      - Open the Postgres details from the resource, go to the Settings tab, and view the Database Credentials.
+        - Copy the URI (`postgres://xxxxxxx`)
+- Log in to your Stripe account, and add your Heroku app URL as a Webhook endpoint.
+  - Copy the Webhook Secret (`whsec_xxxxxx`)
+- Go to the Settings tab.
+  - Click "Reveal Config Vars" and add the following entries:
+    - `CLOUDINARY_URL` - API Environment Variable from Cloudinary.
+    - `DATABASE_URL` - Postgres URI.
+    - `HEROKU_APP_NAME` - The name of your Heroku app.
+    - `SECRET_KEY` - Generate a random secret key value.
+    - `EMAIL_HOST_PASS` - App password from your GMail account.
+    - `EMAIL_HOST_USER` - GMail account email address.
+    - `STRIPE_PUBLIC_KEY` - Public Key from your Stripe account.
+    - `STRIPE_SECRET_KEY` - Secret Key from your Stripe account.
+    - `STRIPE_WH_SECRET` - Webhook Secret from your Stripe Webhook Endpoint.
+- Go back to the Deploy tab.
+  - Click "Deploy Branch"
+  - Monitor the build logs for completion of the deployment.
+- Click "Open app" to launch the site.
 
 # Known Bugs
 Presently there are no known bugs with the site.
@@ -288,7 +344,6 @@ Presently there are no known bugs with the site.
 - Add product search to the site as it grows to a number of products that warrants it.
 - Stock Management - as the site sells bespoke products, it is likely that only a limited number of products will be ready made and available to buy immediately. The roadmap for this area of the site will allow the site owner to enter how many of an item are available to purchase, and automatically subtract items from this when a customer orders them. Once all stock has been purchased, the site will convert the product into a "request order" status.
 # Credits
-- Inspiration for the site design and theme colours taken from the existing website https://www.minisewnsew.com/ however no code/modules etc. were taken from the site - this project was written from scratch just using the site themes and existing product imagery to populate the site, as it is going to be a direct replacement for the existing site.
+- Inspiration for the site design and theme colours taken from the [Mini Sew N Sew](https://www.minisewnsew.com/) website that this project will be replacing. However no code/modules etc. were taken from the site - this project was written from scratch just using the site themes and existing product imagery and text to populate the site.
 - [Django Email Obfuscator](https://github.com/morninj/django-email-obfuscator) - used to obfuscate sensitive links such as emails and telephone numbers
 - [XML Sitemaps](https://www.xml-sitemaps.com/) - sitemap.xml generated with this tool.
-- 
