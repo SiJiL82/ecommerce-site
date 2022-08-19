@@ -65,5 +65,7 @@ Email obfuscation - email addresses displayed on the site are protected from scr
 # Future Developments
 Customise the AllAuth account management forms (sign up, sign in etc.) so they fit the site style. 
 # Credits
-https://github.com/morninj/django-email-obfuscator
-Inspiration for the site design and theme colours taken from the existing website https://www.minisewnsew.com/ however no code/modules etc. were taken from the site - this project was written from scratch just using the site themes and existing product imagery to populate the site, as it is going to be a direct replacement for the existing site.
+- Inspiration for the site design and theme colours taken from the existing website https://www.minisewnsew.com/ however no code/modules etc. were taken from the site - this project was written from scratch just using the site themes and existing product imagery to populate the site, as it is going to be a direct replacement for the existing site.
+- [Django Email Obfuscator](https://github.com/morninj/django-email-obfuscator) - used to obfuscate sensitive links such as emails and telephone numbers
+- [XML Sitemaps](https://www.xml-sitemaps.com/) - sitemap.xml generated with this tool.
+- 
