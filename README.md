@@ -1,4 +1,4 @@
-# Ecommerce Site - Mini Sew N Sew
+# Ecommerce Site - Mini Sew N Sew <!-- omit in toc -->
 This project is an e-commerce site allowing the purchase of physical goods.
 The site has bee configured to be a store front for my sister's real business - Mini Sew N Sew, as her existing site is lacking many features
 she wanted to implement, and is unusable on mobile devices as the site is not responsive.  
@@ -6,33 +6,40 @@ This project aims to fix the existing issues she has, by implementing a fully re
 on in the future to improve her business presence.  
 The project can be viewed at the currently deployed instance on Heroku: [Mini Sew N Sew](https://minisewnsew.herokuapp.com/)
 
-# Table of Contents
+# Table of Contents <!-- omit in toc -->
 - [Design](#design)
   - [Business Logic and Marketing](#business-logic-and-marketing)
   - [SEO](#seo)
   - [User Stories](#user-stories)
-    - [Key stories:](#key-stories)
   - [Site Wireframes](#site-wireframes)
 - [Features](#features)
+  - [Responsive Design](#responsive-design)
+    - [Home Page](#home-page)
+    - [All Products](#all-products)
+    - [Product Details](#product-details)
+    - [FAQ Page](#faq-page)
   - [Navigation Bar](#navigation-bar)
-  - [Home Page](#home-page)
+  - [Home Page](#home-page-1)
   - [Authentication](#authentication)
-  - [FAQ Page](#faq-page)
+  - [FAQ Page](#faq-page-1)
   - [Request a Product](#request-a-product)
   - [Events Page](#events-page)
   - [Product Pages](#product-pages)
+  - [Reviews](#reviews)
   - [Shopping Basket](#shopping-basket)
   - [Checkout Page](#checkout-page)
+  - [Order Confirmation Page](#order-confirmation-page)
+  - [Account Profile Page](#account-profile-page)
   - [Newsletter Signup](#newsletter-signup)
-  - [Misc](#misc)
+  - [Footer](#footer)
+  - [Miscellaneous](#miscellaneous)
 - [Testing](#testing)
-  - [User Story Testing](#user-story-testing)
   - [Validation](#validation)
 - [Deployment](#deployment)
   - [Prerequisites](#prerequisites)
-  - [Instructions](#instructions)
-- [Issues](#issues)
-  - [Known Bugs](#known-bugs)
+  - [To Run The Project Locally:](#to-run-the-project-locally)
+  - [To Deploy The Project To Heroku:](#to-deploy-the-project-to-heroku)
+- [Known Bugs](#known-bugs)
 - [Future Developments](#future-developments)
 - [Credits](#credits)
 
@@ -223,8 +230,6 @@ Examples:
 - Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactive for humans.  
 
 # Testing
-## User Story Testing
-## Feature Testing
 Sign up
 sign in
 Can view authenticated areas
