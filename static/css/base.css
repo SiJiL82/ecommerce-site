@@ -264,8 +264,3 @@ select, select option {
     background-color: white;
     color: rgb(var(--brand-colour));
 }
-
-select:invalid, select option[value=""] {
-    color: rgb(var(--brand-header-background-colour)) !important;
-}
-
