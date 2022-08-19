@@ -23,3 +23,5 @@ class NewRequestForm(forms.ModelForm):
         self.fields['category'].label = 'Category:'
         self.fields['size'].label = 'Size:'
         self.fields['description'].label = 'Description:'
+
+        self.fields['name'].widget.attrs['autofocus'] = True
