@@ -57,8 +57,10 @@
                     </div>
                 </div>
                 {% include 'includes/messages.html' %}
-                {% block content %}
-                {% endblock %}
+                <main>
+                    {% block content %}
+                    {% endblock %}
+                </main>
             </div>
         {% endblock %}
         {% include 'includes/footer.html' %}
