@@ -9,7 +9,7 @@ on in the future to improve her business presence.
 - [Ecommerce Site - Mini Sew N Sew](#ecommerce-site---mini-sew-n-sew)
 - [Table of Contents](#table-of-contents)
 - [Design](#design)
-  - [Business Logic](#business-logic)
+  - [Business Logic and Marketing](#business-logic-and-marketing)
   - [SEO](#seo)
   - [User Stories](#user-stories)
     - [Key stories:](#key-stories)
@@ -38,7 +38,7 @@ on in the future to improve her business presence.
 - [Credits](#credits)
 
 # Design
-## Business Logic
+## Business Logic and Marketing
 - What do users need?
   - View all our products and get information on them.
   - Purchase our products.
@@ -67,12 +67,14 @@ on in the future to improve her business presence.
   - If a user visits a non-existent page, a custom 404 error page includes links to the homepage and shop, encouraging them to visit those pages.
   - The site features newsletter signup functionality, encouraging users to come back to the site when new products or features are added.
 - What marketing strategies do we implement to increase site visits and purchases?
-  - Social media accounts to be used along side the main site:
+  - Social media accounts to be used along side the main site to allow us to frequently:
     - Promote specific products.
     - Highlight events / markets we are visiting.
     - Inform people about new products.
     - Post polls / questions about products people would be interested in seeing.
   - Send out a regular newsletter to subscribers with a summary of what's new, and what's upcoming.
+  - Mockup of the Facebook business page for the Mini Sew N Sew company:
+    - [Facebook Business Page](./readme-assets/Marketing/facebook-mockup.png)
 ## SEO
 SEO keyword research to help the site appear high in rankings:
 - ### Topics:
