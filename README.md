@@ -1,4 +1,5 @@
 # Ecommerce Site - Mini Sew N Sew <!-- omit in toc -->
+![Responsive Overview](./docs/assets/responsive_overview.png)  
 This project is an e-commerce site allowing the purchase of physical goods.
 The site has bee configured to be a store front for my sister's real business - Mini Sew N Sew, as her existing site is lacking many features
 she wanted to implement, and is unusable on mobile devices as the site is not responsive.  
