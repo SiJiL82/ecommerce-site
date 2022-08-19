@@ -74,7 +74,7 @@ on in the future to improve her business presence.
     - Post polls / questions about products people would be interested in seeing.
   - Send out a regular newsletter to subscribers with a summary of what's new, and what's upcoming.
   - Mockup of the Facebook business page for the Mini Sew N Sew company:
-    - [Facebook Business Page](./readme-assets/Marketing/facebook-mockup.png)
+    - [Facebook Business Page](./docs/assets/marketing/facebook-mockup.png)
 ## SEO
 SEO keyword research to help the site appear high in rankings:
 - ### Topics:
@@ -101,7 +101,7 @@ An agile process was used during the development to track and iterate on feature
 ### Key stories:  
 
 ## Site Wireframes
-[DesignWireframes](docs/design_wireframes.md)  
+[Design Wireframes](./docs/design_wireframes.md)
 
 # Features
 ## Navigation Bar
