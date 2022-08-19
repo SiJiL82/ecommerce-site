@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /admin/
+Sitemap: https://minisewnsew.herokuapp.com/sitemap.xml
