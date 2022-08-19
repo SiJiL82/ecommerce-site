@@ -1,12 +1,41 @@
 # Ecommerce Site - Mini Sew N Sew
-This project is an ecommerce site allowing the purchase of physical goods.
+This project is an e-commerce site allowing the purchase of physical goods.
 The site has bee configured to be a store front for my sister's real business - Mini Sew N Sew, as her existing site is lacking many features
 she wanted to implement, and is unusable on mobile devices as the site is not responsive.  
 This project aims to fix the existing issues she has, by implementing a fully responsive, fully customisable design that she can use and iterate
-on in the future to improve her business prescence.  
+on in the future to improve her business presence.  
 
 # Table of Contents
+- [Ecommerce Site - Mini Sew N Sew](#ecommerce-site---mini-sew-n-sew)
+- [Table of Contents](#table-of-contents)
 - [Design](#design)
+  - [Business Logic](#business-logic)
+  - [SEO](#seo)
+  - [User Stories](#user-stories)
+    - [Key stories:](#key-stories)
+  - [Site Wireframes](#site-wireframes)
+- [Features](#features)
+  - [Navigation Bar](#navigation-bar)
+  - [Home Page](#home-page)
+  - [Authentication](#authentication)
+  - [FAQ Page](#faq-page)
+  - [Request a Product](#request-a-product)
+  - [Events Page](#events-page)
+  - [Product Pages](#product-pages)
+  - [Shopping Basket](#shopping-basket)
+  - [Checkout Page](#checkout-page)
+  - [Newsletter Signup](#newsletter-signup)
+  - [Misc](#misc)
+- [Testing](#testing)
+  - [User Story Testing](#user-story-testing)
+  - [Validation](#validation)
+- [Deployment](#deployment)
+  - [Prerequisites](#prerequisites)
+  - [Instructions](#instructions)
+- [Issues](#issues)
+  - [Known Bugs](#known-bugs)
+- [Future Developments](#future-developments)
+- [Credits](#credits)
 
 # Design
 ## Business Logic
@@ -37,6 +66,13 @@ on in the future to improve her business prescence.
   - The intuitively laid out navbar exists on every page of the site, which should encourage users to visit the different pages.
   - If a user visits a non-existent page, a custom 404 error page includes links to the homepage and shop, encouraging them to visit those pages.
   - The site features newsletter signup functionality, encouraging users to come back to the site when new products or features are added.
+- What marketing strategies do we implement to increase site visits and purchases?
+  - Social media accounts to be used along side the main site:
+    - Promote specific products.
+    - Highlight events / markets we are visiting.
+    - Inform people about new products.
+    - Post polls / questions about products people would be interested in seeing.
+  - Send out a regular newsletter to subscribers with a summary of what's new, and what's upcoming.
 ## SEO
 SEO keyword research to help the site appear high in rankings:
 - ### Topics:
@@ -69,15 +105,15 @@ An agile process was used during the development to track and iterate on feature
 ## Navigation Bar
 ## Home Page
 ## Authentication
-## FAQ
+## FAQ Page
 ## Request a Product
-## Events
+## Events Page
 ## Product Pages
 ## Shopping Basket
+## Checkout Page
 ## Newsletter Signup
 ## Misc
 Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactable by humans.  
-## Checkout
 
 # Testing
 ## User Story Testing
@@ -89,6 +125,7 @@ Email obfuscation - email addresses displayed on the site are protected from scr
 
 # Issues
 ## Known Bugs
+Presently there are no known bugs with the site.
 # Future Developments
 Customise the AllAuth account management forms (sign up, sign in etc.) so they fit the site style. 
 # Credits
