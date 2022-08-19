@@ -252,8 +252,23 @@ Admin can add, update and remove products.
 Product filters work.
 No products on filters shows helpful page.
 ## Validation
-HTML
-CSS
+- [HTML Validation](https://validator.w3.org)
+  - No validation issues were found:
+    - Note only pages / content on pages that do not require user authentication could be checked.
+    - This means the checkout, order confirmation and forms (such as on the request page) have not been validated.
+    - Given the standards adhered to for all content resulting in the tests below not generating any errors, it is not expected that any areas of the site that require authentication would fail validation.
+  - [Homepage](./docs/assets/validation/html_homepage.png)
+  - [Products Page](./docs/assets/validation/html_products.png)
+  - [Product Details](./docs/assets/validation/html_product_details.png)
+  - [Basket](./docs/assets/validation/html_basket.png)
+  - [Request Page](./docs/assets/validation/html_request.png)
+  - [Events Page](./docs/assets/validation/html_events.png)
+  - [Newsletter Signup](./docs/assets/validation/html_newsletter.png)
+  - [Account Signup](./docs/assets/validation/html_account_signup.png)
+- [CSS Validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fres.cloudinary.com%2Fho64hklak%2Fraw%2Fupload%2Fv1%2Fstatic%2Fcss%2Fbase.672087c91bc2.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No validation issues were found.
+    - Note that the report contains warnings regarding the use of CSS variables, as the validator does not check these.
+  - [CSS](./docs/assets/validation/css.png)
 
 # Deployment
 ## Prerequisites
