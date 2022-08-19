@@ -6,8 +6,6 @@ This project aims to fix the existing issues she has, by implementing a fully re
 on in the future to improve her business presence.  
 
 # Table of Contents
-- [Ecommerce Site - Mini Sew N Sew](#ecommerce-site---mini-sew-n-sew)
-- [Table of Contents](#table-of-contents)
 - [Design](#design)
   - [Business Logic and Marketing](#business-logic-and-marketing)
   - [SEO](#seo)
@@ -39,6 +37,8 @@ on in the future to improve her business presence.
 
 # Design
 ## Business Logic and Marketing
+- What is our business focus?
+  - We are a B2C focussed company, selling bespoke hand made children's clothing.
 - What do users need?
   - View all our products and get information on them.
   - Purchase our products.
@@ -97,14 +97,40 @@ SEO keyword research to help the site appear high in rankings:
   - Babies / Children
   - Dresses, Dungarees, Jumpers, Leggings, Rompers, Skirts
 ## User Stories
-An agile process was used during the development to track and iterate on features for the site, using GitHub [project](https://github.com/users/SiJiL82/projects/1)  
-### Key stories:  
+An agile process was used during the development to track and iterate on user stories for the site, using a GitHub [project](https://github.com/users/SiJiL82/projects/1)  
+- As a User, I want to:
+  - Browse products the site sells.
+  - See details about a specific product.
+  - Purchase any products I like.
+  - Save my info so I don't have to complete it each time I make a purchase.
+  - Get information about the company so I can decide whether to purchase from them or support them in other ways.
+  - Request a custom made product.
+- As a Site Owner, I want to:
+  - Be able to add and remove products.
+  - View orders.
+  - View requests site visitors have made.
+  - Add events I am going to so visitors can also attend.
+  - Offer users the ability to sign up to an email newsletter.
+  - Provide links to my social media accounts so they can stay up to date with my posts there.
 
 ## Site Wireframes
 [Design Wireframes](./docs/design_wireframes.md)
 
 # Features
+## Responsive Design
+The site is fully responsive, with all content and pages resizing to fit mobile, tablet and desktop devices at any resolution.  
+Examples:  
+### Home Page
+![Home Page Responsive](./docs/assets/features/homepage_responsive.png)
+### All Products
+![All Products Responsive](./docs/assets/features/all_products_responsive.png)
+### Product Details
+![Product Details Page Responsive](./docs/assets/features/product_details_responsive.png)
+### FAQ Page
+![FAQ Page Responsive](./docs/assets/features/faq_responsive.png)
+
 ## Navigation Bar
+- A 
 ## Home Page
 ## Authentication
 ## FAQ Page
@@ -125,11 +151,11 @@ Email obfuscation - email addresses displayed on the site are protected from scr
 ## Prerequisites
 ## Instructions
 
-# Issues
-## Known Bugs
+# Known Bugs
 Presently there are no known bugs with the site.
 # Future Developments
-Customise the AllAuth account management forms (sign up, sign in etc.) so they fit the site style. 
+- Customise the AllAuth account management forms (sign up, sign in etc.) so they fit the site style. 
+- Add order completion for the site owner to mark an item as shipped and send the customer an email.
 # Credits
 - Inspiration for the site design and theme colours taken from the existing website https://www.minisewnsew.com/ however no code/modules etc. were taken from the site - this project was written from scratch just using the site themes and existing product imagery to populate the site, as it is going to be a direct replacement for the existing site.
 - [Django Email Obfuscator](https://github.com/morninj/django-email-obfuscator) - used to obfuscate sensitive links such as emails and telephone numbers
