@@ -184,6 +184,7 @@ Examples:
 ![Product Category Menu](./docs/assets/features/products_menu.png)  
 ![Product Category Filtered](./docs/assets/features/products_category_filter.png)
 - When no products are available for a chosen category, a message is shown to the user directing them to the All Products page:  
+  - It was an intended marketing decision to keep the category selectable on the menu when no products are available, rather than hide the option as it encourages a visitor to request a custom item of this category.
 ![Product Category Not Available](./docs/assets/features/products_not_available.png)
 - Each product has a "More Details" button that can be clicked to take the user to a product details page for that specific product.
   - On this page the user can see item details, sizes available, and choose to add the item to their shopping basket.  

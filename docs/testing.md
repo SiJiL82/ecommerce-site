@@ -93,33 +93,45 @@
 ![Order Confirmation Email](./assets/testing/purchase_checkout_confirmation_email.png)  
 - If the order is placed as a signed in user, the order is now visible in the user's profile page:  
 ![Order Visible In Order History](./assets/testing/purchase_checkout_order_history.png)  
+## Products
+### Product Admin
+- The site owner can use the CMS admin pages to add a new product:  
+![Admin Add New Product](./assets/testing/products_admin_add_product.png)  
+- The new product shows up on All Products, and under the category for the product:  
+![New Product All Products](./assets/testing/products_admin_add_product_all_products.png)  
+![New Product Category Page](./assets/testing/products_admin_add_product_category_page.png)  
+- The product details page is created for the new product:  
+![New Product Details](./assets/testing/products_admin_product_details.png)  
+- The site owner can use the CMS admin pages to update a product:  
+![Update Product](./assets/testing/products_admin_update_product.png)  
+![Update Product Success](./assets/testing/products_admin_update_success.png)  
+![Update Product Details View](./assets/testing/products_admin_update_product_details.png)  
+- The site owner can use the CMS admin pages to delete a product:  
+![Delete Product](./assets/testing/products_admin_delete_product.png)  
+![Delete Product Confirmation](./assets/testing/products_admin_delete_product_confirmation.png)  
+- A deleted product no longer shows up in the product listing: 
+  - Note: the product category was changed to "Dresses" in the test above, hence this screenshot showing the Dresses category, not Jumpers that the product was initially added to.
+![Deleted Product Not Listed](./assets/testing/products_admin_deleted_product_not_listed.png)  
+- A deleted product details page is no longer accessible:  
+![Deleted Product Details Page](./assets/testing/products_admin_deleted_product_404.png)  
+### Product Category Filters
+- Products appear in the correct category filter in the shop:  
+  - For example, a pair of dungarees only show in the Dungarees filter, but do not show in Jumpers.
+![Dungarees Category Filter](./assets/testing/products_category_dungarees.png)  
+![Jumpers Category Filter](./assets/testing/products_category_jumpers.png)  
+- All products appear on the all products page, regardless of category:  
+![All Products Admin](./assets/testing/products_category_all_products_admin.png)  
+![All Products Page](./assets/testing/products_category_all_products.png)  
+- When no products are available for a specific category, the category filter shows an information message to the user:  
+![Product Category Not Available](./assets/testing/products_category_not_available.png)  
 
-
-
-
-Admin can add, update and remove products.
-
-Add to basket
-Add multiple to basket
-Delete from basket
-
-
-Go to checkout
-No details filled on first purchase
-Form validation
-Complete checkout
-Card validation
-Email received
-Save details viewable in profile
-Edit details in profile
 Admin can create events
-Non admin but authenticated can't create events.
 Admin can delete events
 Events in the past not shown
 
 Authenticated user can create requests
 Authenticated user can see own requests and not others
-User can delete and ammend own requests.
+User can delete and amend own requests.
 Newsletter signup saves in DB
 
 Product filters work.
