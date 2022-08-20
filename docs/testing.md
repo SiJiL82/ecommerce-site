@@ -1,5 +1,21 @@
 # Site Testing <!-- omit in toc -->
-
+# Table of Contents <!-- omit in toc -->
+- [Authentication](#authentication)
+  - [Account Sign Up](#account-sign-up)
+  - [Account Sign In](#account-sign-in)
+  - [Protected Site Pages](#protected-site-pages)
+  - [Account Sign Out](#account-sign-out)
+  - [Profile](#profile)
+- [Purchase Journey](#purchase-journey)
+  - [Basket](#basket)
+  - [Checkout](#checkout)
+- [Products](#products)
+  - [Product Admin](#product-admin)
+  - [Product Category Filters](#product-category-filters)
+- [Events](#events)
+  - [Event Admin](#event-admin)
+- [Requests](#requests)
+  - [Request Management](#request-management)
 ## Authentication
 ### Account Sign Up
 - Attempting to sign up with an email address already in use by another user results in an error:  
@@ -139,7 +155,9 @@
 - Events created in the past / events that pass their event date are not shown on the page:  
 ![Past Events Admin](./assets/testing/events_past_events_admin.png)  
 ![Past Events Not Shown](./assets/testing/events_past_events_not_displayed.png)  
-
+## Requests
+### Request Management
+- Authenticated 
 
 Authenticated user can create requests
 Authenticated user can see own requests and not others
