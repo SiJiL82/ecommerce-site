@@ -124,15 +124,24 @@
 ![All Products Page](./assets/testing/products_category_all_products.png)  
 - When no products are available for a specific category, the category filter shows an information message to the user:  
 ![Product Category Not Available](./assets/testing/products_category_not_available.png)  
+## Events
+### Event Admin
+- The site owner can create a new event from the events page, rather than needing to use the CMS admin page:  
+![Admin Add Event](./assets/testing/events_admin_add_event.png)  
+![Admin Add Event Success](./assets/testing/events_admin_add_event_success.png)  
+- Not entering any required fields on the add event form shows an error:  
+![Admin Add Event Missing Field](./assets/testing/events_admin_missing_field.png)
+- The site owner can delete an event using the UI element on each event:  
+![Admin Delete Event](./assets/testing/events_admin_delete_event.png)  
+![Admin Delete Event Confirmation](./assets/testing/events_admin_event_deleted_confirmation.png)  
+- This UI element is only visible when logged in as an administrator. Regular users cannot see it:  
+![No Delete Option For Non Admin](./assets/testing/events_admin_no_delete_option.png)  
+- Events created in the past / events that pass their event date are not shown on the page:  
+![Past Events Admin](./assets/testing/events_past_events_admin.png)  
+![Past Events Not Shown](./assets/testing/events_past_events_not_displayed.png)  
 
-Admin can create events
-Admin can delete events
-Events in the past not shown
 
 Authenticated user can create requests
 Authenticated user can see own requests and not others
 User can delete and amend own requests.
 Newsletter signup saves in DB
-
-Product filters work.
-No products on filters shows helpful page.
