@@ -17,18 +17,35 @@
 ![Account Created In Django Admin](./assets/testing/auth_signup_user_created_admin.png)  
 ![Email Verification Received](./assets/testing/auth_signup_email_verification.png)  
 - Attempting to log in without verifying email address fails:
-    - The same email verification page is shown to the user as was originally shown when they created the account.
+  - The same email verification page is shown to the user as was originally shown when they created the account.
 - Clicking the verify link in the email successfully verifies the account and allows the user to log in:  
 ![Confirm Email Address](./assets/testing/auth_signup_confirm_email.png)  
 ![Email Address Confirmed](./assets/testing/auth_signup_email_confirmed.png)  
-###  Account Sign In
+### Account Sign In
 - Attempting to sign in with an invalid email address shows an error:  
 ![Invalid Email Address](./assets/testing/auth_signin_invalid_email.png)  
 - Attempting to sign in with a valid email address but invalid password shows an error:  
 ![Invalid Password](./assets/testing/auth_signin_invalid_password.png)  
+- Signing in with valid credentials successfully logs the user into the site:  
+![Sign In Success](./assets/testing/auth_signin_success.png)  
+### Protected Site Pages
+- When signed in as an authenticated user, protected areas of the site are accessible:  
+  - My Profile:  
+![Account Menu Changes](./assets/testing/auth_protected_account_menu.png)  
+![Your Profile Page](./assets/testing/auth_protected_profile.png)  
+  - Request Page:  
+![Request Page](./assets/testing/auth_protected_request.png)  
+- When signed out, protected areas of the site are no longer accessible:  
+  - My Profile:  
+![Account Menu Signed Out](./assets/testing/auth_protected_signedout_menu.png)  
+  - Attempting to access `/profile/` redirects to the Sign In page:  
+![Profile Redirect To Sign In](./assets/testing/auth_protected_profile_redirect.png)  
+  - Request Page:
+![Request Page Signed Out](./assets/testing/auth_protected_signedout_request.png)  
+- When signed in as a regular user, the `/admin/` areas of the site are not accessible:  
+![Admin Protected](./assets/testing/auth_protected_admin.png)  
 
 
-Can view authenticated areas
 sign out
 Can't view authenticated areas
 Add to basket
