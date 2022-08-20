@@ -16,6 +16,8 @@
   - [Event Admin](#event-admin)
 - [Requests](#requests)
   - [Request Management](#request-management)
+- [Newsletter](#newsletter)
+  - [Signup](#signup)
 ## Authentication
 ### Account Sign Up
 - Attempting to sign up with an email address already in use by another user results in an error:  
@@ -181,5 +183,12 @@
 ![Request Pre Fulfillment](./assets/testing/request_pre_fulfilled.png)  
 ![Request Marked Fulfilled By Admin](./assets/testing/request_admin_mark_fulfilled.png)  
 ![Requests Post Fulfillmet](./assets/testing/request_post_fulfillment.png)  
-
-Newsletter signup saves in DB
+## Newsletter
+### Signup
+- Not completing any required fields on the newsletter signup form shows an error:  
+![Newsletter Signup Missing Fields](./assets/testing/newsletter_signup_missing_fields.png)  
+- Completing all fields correctly allows the user to submit the form, and they are shown a success message:  
+![Newsletter Signup Valid](./assets/testing/newsletter_signup_valid.png)  
+![Newsletter Signup Success](./assets/testing/newsletter_signup_success.png)  
+- Successful newsletter signup form submissions are saved in the database and visible to the site owner in the CMS admin panel:  
+![Newsletter Signup Success Admin](./assets/testing/newsletter_signup_success_admin.png)  
