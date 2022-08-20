@@ -338,7 +338,7 @@ Examples:
 - Click "Open app" to launch the site.
 
 # Known Bugs
-Presently there are no known bugs with the site.
+- The Add Event form date field only accepts dates in the format `YYYY-MM-DD`. Entering a valid date in a different format (such as `DD-MM-YYYY`) fails to save the event, but with no error message.
 # Future Developments
 - Customise the AllAuth account management forms (sign up, sign in etc.) so they fit the site style. 
 - Add order completion for the site owner to mark an item as shipped and send the customer an email.
