@@ -157,9 +157,29 @@
 ![Past Events Not Shown](./assets/testing/events_past_events_not_displayed.png)  
 ## Requests
 ### Request Management
-- Authenticated 
+- Submitting the product request form with required fields missing shows an error:  
+![Request Form Missing Fields](./assets/testing/request_form_missing_fields.png)  
+- When completing a form with valid entries, the user can click submit and the request is saved in the database:  
+![Request Form Valid Fields](./assets/testing/request_form_valid.png)  
+![Request Form Success Admin Overview](./assets/testing/request_form_success_admin_overview.png)  
+![Request Form Success Admin Details](./assets/testing/request_form_success_admin_details.png)  
+- A confirmation message is shown to the user on successful save:  
+![Request Form Success](./assets/testing/request_form_success.png)  
+- An authenticated user is shown all their open requests on the request page:  
+![Open Requests](./assets/testing/request_open_requests.png)  
+- An authenticated user can update the details on their request:  
+![Request Form Update](./assets/testing/request_form_update.png)  
+![Request Form Update Success](./assets/testing/request_form_update_success.png)  
+  - The open requests view shows the updated request details:  
+![Open Requests Updated](./assets/testing/request_open_requests_updated.png)  
+- An authenticated user can delete an open request via the UI element on the open requests listing:    
+![Delete Request](./assets/testing/request_open_request_delete.png)  
+![Delete Request Success](./assets/testing/request_delete_request_success.png)  
+- Deleted requests no longer show up in the open requests listing:  
+![Deleted Requests Not Shown](./assets/testing/request_deleted_not_shown.png)  
+- The site owner can mark a request as fulfilled and it will not show in a user's open requests:  
+![Request Pre Fulfillment](./assets/testing/request_pre_fulfilled.png)  
+![Request Marked Fulfilled By Admin](./assets/testing/request_admin_mark_fulfilled.png)  
+![Requests Post Fulfillmet](./assets/testing/request_post_fulfillment.png)  
 
-Authenticated user can create requests
-Authenticated user can see own requests and not others
-User can delete and amend own requests.
 Newsletter signup saves in DB
