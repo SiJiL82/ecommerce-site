@@ -44,6 +44,10 @@
 ![Request Page Signed Out](./assets/testing/auth_protected_signedout_request.png)  
 - When signed in as a regular user, the `/admin/` areas of the site are not accessible:  
 ![Admin Protected](./assets/testing/auth_protected_admin.png)  
+- When signed in as a site administrator, the "add event" form is visible on the Markets page:  
+![Admin Add Event](./assets/testing/auth_protected_admin_add_event.png)  
+- When signed in as a user that is not a site administrator, the "add event" form is not visible on the Markets page:  
+![Non Admin Can't Add Event](./assets/testing/auth_protected_nonadmin_events.png)  
 ### Account Sign Out
 - The user can easily sign out of the site using the account menu:  
 ![Account Menu Sign Out](./assets/testing/auth_signout_account_menu.png)  
@@ -75,6 +79,20 @@
 - Removing all items from the basket shows the user that the basket is empty:  
 ![All Items Removed From Basket](./assets/testing/purchase_basket_all_items_removed.png)  
 ### Checkout
+- Not entering a required field on the details form shows an error:  
+![Checkout Details Required Field Missing](./assets/testing/purchase_checkout_missing_required_field.png)  
+- Entering an invalid card number shows an error:  
+![Invalid Card Number](./assets/testing/purchase_checkout_invalid_card_number.png)  
+- Not entering all fields on the card details shows an error:  
+![Missing Card Number](./assets/testing/purchase_checkout_missing_card_number.png)  
+![Missing Expiry Date](./assets/testing/purchase_checkout_missing_expiry.png)  
+![Missing CVC Number](./assets/testing/purchase_checkout_missing_cvc.png)  
+- Entering all fields on the form correctly successfully places an order:  
+![Order Placed Successfully](./assets/testing/purchase_checkout_success.png)  
+- An order confirmation email is sent to the user when an order is successfully placed:  
+![Order Confirmation Email](./assets/testing/purchase_checkout_confirmation_email.png)  
+- If the order is placed as a signed in user, the order is now visible in the user's profile page:  
+![Order Visible In Order History](./assets/testing/purchase_checkout_order_history.png)  
 
 
 
