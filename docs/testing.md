@@ -44,6 +44,13 @@
 ![Request Page Signed Out](./assets/testing/auth_protected_signedout_request.png)  
 - When signed in as a regular user, the `/admin/` areas of the site are not accessible:  
 ![Admin Protected](./assets/testing/auth_protected_admin.png)  
+### Account Sign Out
+- The user can easily sign out of the site using the account menu:  
+![Account Menu Sign Out](./assets/testing/auth_signout_account_menu.png)  
+![Sign Out Page](./assets/testing/auth_signout_page.png)  
+![Signed Out Success](./assets/testing/auth_signout_signed_out.png)  
+
+
 
 
 sign out
