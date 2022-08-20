@@ -231,34 +231,7 @@ Examples:
 - Email obfuscation - email addresses displayed on the site are protected from scraping by bots, but are still interactive for humans.  
 
 # Testing
-Sign up
-sign in
-Can view authenticated areas
-sign out
-Can't view authenticated areas
-Add to basket
-Add multiple to basket
-Delete from basket
-Go to checkout
-No details filled on first purchase
-Form validation
-Complete checkout
-Card validation
-Email received
-Save details viewable in profile
-Edit details in profile
-Admin can create events
-Non admin but authenticated can't create events.
-Admin can delete events
-Events in the past not shown
-Non authenticated user can't create requests
-Authenticated user can create requests
-Authenticated user can see own requests and not others
-User can delete and ammend own requests.
-Newsletter signup saves in DB
-Admin can add, update and remove products.
-Product filters work.
-No products on filters shows helpful page.
+[Testing Documentation](./docs/testing.md)
 ## Validation
 - [HTML Validation](https://validator.w3.org)
   - No validation issues were found:
