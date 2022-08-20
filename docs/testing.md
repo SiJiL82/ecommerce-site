@@ -61,6 +61,20 @@
 - Changing the details during the checkout process updates in the profile page when the save button is ticked:  
 ![Checkout Save New Details](./assets/testing/auth_profile_checkout_change_details.png)  
 ![Profile Details Saved From Checkout](./assets/testing/auth_profile_details_saved_from_checkout.png)  
+## Purchase Journey
+### Basket
+- Products can be added to and removed from the basket: 
+  - The basket total and grand total update accordingly when items are added and removed.  
+![Item Added To Basket](./assets/testing/purchase_basket_add_item.png)  
+![Basket With 2 Items](./assets/testing/purchase_basket.png)  
+![Item Removed From Basket](./assets/testing/purchase_basket_remove_item.png)  
+- Multiple identical items can be added to the basket and the quantity increases:  
+![Identical Items In Basket](./assets/testing/purchase_basket_identical_items.png)  
+- Multiple items of the same type but different sizes can be added to the basket but do not combine:  
+![Identical Items Different Sizes](./assets/testing/purchase_basket_different_size_items.png)  
+- Removing all items from the basket shows the user that the basket is empty:  
+![All Items Removed From Basket](./assets/testing/purchase_basket_all_items_removed.png)  
+### Checkout
 
 
 
