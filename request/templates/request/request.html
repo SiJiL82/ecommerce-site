@@ -18,10 +18,10 @@
                 </form>
             </div>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col">
-                {% if my_requests %}
+        {% if my_requests %}
+            <hr>
+            <div class="row">
+                <div class="col">
                     <div class="row justify-content-center mt-4 mx-sm-1">
                         <div class="col-md-12 col-lg-8 col-xl-6">
                             <h3 class="mt-2 text-brand">Your open requests:</h3>
@@ -40,9 +40,9 @@
                             </div>
                         </div>
                     {% endfor %}
-                {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
     {% else %}
         <div class="row justify-content-center mt-4 mx-sm-1">
             <div class="col-sm-12 col-md-8 col-xl-6 px-5 text-center">
