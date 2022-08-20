@@ -49,15 +49,29 @@
 ![Account Menu Sign Out](./assets/testing/auth_signout_account_menu.png)  
 ![Sign Out Page](./assets/testing/auth_signout_page.png)  
 ![Signed Out Success](./assets/testing/auth_signout_signed_out.png)  
+### Profile
+- Entering details into the profile page saves those details:  
+  - New profile, no details are saved:  
+![Profile With No Details](./assets/testing/auth_profile_no_details.png)  
+  - Entering details and clicking the form button saves the details, which are then loaded into the form on subsequent viewing:    
+![Profile Details Entered](./assets/testing/auth_profile_enter_details.png)  
+![Profile Details Saved](./assets/testing/auth_profile_details_saved.png)  
+- Going to a purchase checkout auto completes the checkout form with these details:  
+![Checkout Autocompletes Details](./assets/testing/auth_profile_checkout.png)  
+- Changing the details during the checkout process updates in the profile page when the save button is ticked:  
+![Checkout Save New Details](./assets/testing/auth_profile_checkout_change_details.png)  
+![Profile Details Saved From Checkout](./assets/testing/auth_profile_details_saved_from_checkout.png)  
 
 
 
 
-sign out
-Can't view authenticated areas
+Admin can add, update and remove products.
+
 Add to basket
 Add multiple to basket
 Delete from basket
+
+
 Go to checkout
 No details filled on first purchase
 Form validation
@@ -70,11 +84,11 @@ Admin can create events
 Non admin but authenticated can't create events.
 Admin can delete events
 Events in the past not shown
-Non authenticated user can't create requests
+
 Authenticated user can create requests
 Authenticated user can see own requests and not others
 User can delete and ammend own requests.
 Newsletter signup saves in DB
-Admin can add, update and remove products.
+
 Product filters work.
 No products on filters shows helpful page.
